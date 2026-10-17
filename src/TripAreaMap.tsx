@@ -7,17 +7,17 @@ type Area={name:string;lat:number;lng:number};
 const zones:Record<string,Area[]>={
 '1024':[{name:'Penn Station',lat:40.7506,lng:-73.9935},{name:'Interfaith Retreats／Chelsea',lat:40.7496,lng:-73.9954}],
 '1025':[{name:'Verdi Square',lat:40.7781,lng:-73.9824},{name:'The Dakota',lat:40.7765,lng:-73.9761},{name:'Strawberry Fields',lat:40.7757,lng:-73.9749},{name:'Central Park 湖畔',lat:40.7783,lng:-73.9684},{name:'Cooper Hewitt',lat:40.7844,lng:-73.9578}],
-'1026':[{name:'Brooklyn Bridge 行人入口',lat:40.7132,lng:-74.0046},{name:'Brooklyn Bridge',lat:40.7061,lng:-73.9969},{name:'Washington Street／DUMBO',lat:40.7032,lng:-73.9893},{name:'Pebble Beach',lat:40.7045,lng:-73.9891},{name:'Brooklyn Heights Promenade',lat:40.6968,lng:-73.9973},{name:'DUMBO／Fulton Ferry Landing',lat:40.7034,lng:-73.9946},{name:'Wall St／Pier 11',lat:40.7035,lng:-74.0060}],
+'1026':[{name:'The Met',lat:40.7794,lng:-73.9632}],
 '1027':[{name:'Printed Matter',lat:40.7496,lng:-74.0065},{name:'Chelsea Market',lat:40.7424,lng:-74.0060},{name:'Gansevoort Plaza',lat:40.7398,lng:-74.0069},{name:'Whitney Museum 外觀',lat:40.7396,lng:-74.0089},{name:'Little Island',lat:40.7420,lng:-74.0105}],
 '1028':[{name:'Rector Park East／Figure Drawing',lat:40.7091,lng:-74.0167},{name:'Wagner Park／可選速寫課',lat:40.7050,lng:-74.0184},{name:'SoHo／Prince Street',lat:40.7247,lng:-73.9991},{name:'West Village',lat:40.7358,lng:-74.0036}],
 '1029':[{name:'Flatiron Building',lat:40.7411,lng:-73.9897},{name:'Madison Square Park',lat:40.7425,lng:-73.9877},{name:'Bryant Park',lat:40.7536,lng:-73.9832},{name:'New York Public Library',lat:40.7532,lng:-73.9822},{name:'MoMA',lat:40.7614,lng:-73.9776},{name:'Rockefeller Center',lat:40.7587,lng:-73.9787},{name:'New Amsterdam Theatre',lat:40.7561,lng:-73.9885}],
-'1030':[{name:'Bethesda Terrace',lat:40.7744,lng:-73.9709},{name:'Central Park 湖畔',lat:40.7783,lng:-73.9684},{name:'The Met',lat:40.7794,lng:-73.9632}],
+'1030':[{name:'Brooklyn Bridge 行人入口',lat:40.7132,lng:-74.0046},{name:'Brooklyn Bridge',lat:40.7061,lng:-73.9969},{name:'Washington Street／DUMBO',lat:40.7032,lng:-73.9893},{name:'Pebble Beach',lat:40.7045,lng:-73.9891},{name:'Brooklyn Heights Promenade',lat:40.6968,lng:-73.9973},{name:'DUMBO／Fulton Ferry Landing',lat:40.7034,lng:-73.9946},{name:'Wall St／Pier 11',lat:40.7035,lng:-74.0060}],
 '1031':[{name:'Greenwich Village／Halloween Parade',lat:40.7324,lng:-73.9982}],
 '1101':[{name:'70 Pine Street・凌晨出發',lat:40.7063,lng:-74.0076},{name:'JFK Terminal 4・07:10 起飛',lat:40.6446,lng:-73.7822}],
 '1102':[{name:'桃園機場第二航廈・20:30 抵達',lat:25.0777,lng:121.2328}]
 };
 const walkingSegments:Record<string,number[][]>={
-'1024':[[0,1]],'1025':[[0,1,2,3,4]],'1026':[[0,1,2,3,4,5]],'1027':[[0,1,2,3,4]],'1028':[[2,3]],'1029':[[0,1,2,3,4,5,6]],'1030':[[0,1,2]],'1031':[],'1101':[],'1102':[]
+'1024':[[0,1]],'1025':[[0,1,2,3,4]],'1026':[],'1027':[[0,1,2,3,4]],'1028':[[2,3]],'1029':[[0,1,2,3,4,5,6]],'1030':[[0,1,2,3,4,5]],'1031':[],'1101':[],'1102':[]
 };
 const palette=['#bd6c4e','#577d67','#b18a45','#597e9b','#9c688b','#557c7e','#aa7751','#7a719e','#70905d','#9b6b6b'];
 export default function TripAreaMap({selectedDay,onSelectDay}:{selectedDay:string;onSelectDay:(id:string)=>void}){
