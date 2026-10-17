@@ -13,8 +13,8 @@ const zones:Record<string,Area[]>={
 '1029':[{name:'Bryant Park',lat:40.7536,lng:-73.9832},{name:'New York Public Library',lat:40.7532,lng:-73.9822},{name:'MoMA',lat:40.7614,lng:-73.9776},{name:'Rockefeller Center',lat:40.7587,lng:-73.9787},{name:'New Amsterdam Theatre',lat:40.7561,lng:-73.9885}],
 '1030':[{name:'Brooklyn Bridge 行人入口',lat:40.7132,lng:-74.0046},{name:'Brooklyn Bridge',lat:40.7061,lng:-73.9969},{name:'Washington Street／DUMBO',lat:40.7032,lng:-73.9893},{name:'Pebble Beach',lat:40.7045,lng:-73.9891},{name:'Brooklyn Heights Promenade',lat:40.6968,lng:-73.9973},{name:'Morgan Library',lat:40.7492,lng:-73.9815}],
 '1031':[{name:'SoHo／Prince Street',lat:40.7247,lng:-73.9991},{name:'Washington Square Park',lat:40.7308,lng:-73.9973},{name:'West Village／Bleecker Street',lat:40.7358,lng:-74.0036},{name:'Halloween Parade／Sixth Avenue',lat:40.7324,lng:-73.9982}],
-'1101':[{name:'Whitehall Terminal',lat:40.7017,lng:-74.0132},{name:'St. George Ferry Terminal',lat:40.6438,lng:-74.0722},{name:'Roosevelt Island Tram／Manhattan',lat:40.7613,lng:-73.9647},{name:'Roosevelt Island',lat:40.7617,lng:-73.9497}],
-'1102':[{name:'70 Pine Street',lat:40.7063,lng:-74.0076},{name:'JFK 機場',lat:40.6413,lng:-73.7781}]
+'1101':[{name:'70 Pine Street・凌晨出發',lat:40.7063,lng:-74.0076},{name:'JFK Terminal 4・07:10 起飛',lat:40.6446,lng:-73.7822}],
+'1102':[{name:'桃園機場第二航廈・20:30 抵達',lat:25.0777,lng:121.2328}]
 };
 const walkingSegments:Record<string,number[][]>={
 '1024':[[0,1]],'1025':[[0,1,2,3,4]],'1026':[[0,1,2,3,4]],'1027':[[0,1,2,3,4]],'1028':[[0,1]],'1029':[[0,1],[2,3,4]],'1030':[[0,1,2,3,4]],'1031':[[0,1,2,3]],'1101':[],'1102':[]
