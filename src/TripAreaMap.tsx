@@ -12,9 +12,10 @@ const areas:Area[]=[
   {id:'west-village',shape:'M196 837 L417 892 413 1036 238 1015Z',days:['1028','1031']},
   {id:'soho',shape:'M247 1033 L413 1036 428 1141 263 1147Z',days:['1028']},
   {id:'east-village',shape:'M419 890 L635 879 651 1069 434 1067Z',days:['1031']},
+  {id:'lower-east-waterfront',shape:'M565 1075 L709 1085 709 1250 594 1280Z',days:['1030']},
   {id:'financial-district',shape:'M295 1291 L398 1282 557 1279 567 1437 489 1510 407 1471 325 1405Z',days:['1027','1030']},
   {id:'battery-park',shape:'M287 1254 L396 1247 391 1365 330 1401Z',days:['1028']},
-  {id:'brooklyn-bridge',shape:'M625 1006 L709 1007 708 1085 642 1061Z',days:['1030']},
+  {id:'brooklyn-bridge',shape:'M581 1190 L709 1170 709 1360 593 1377Z',days:['1030']},
 ];
 const extra:Record<string,string[]>={
   '1025':['Cooper Hewitt · Upper East Side'],
@@ -43,6 +44,7 @@ export default function TripAreaMap({selectedDay}:{selectedDay:string;onSelectDa
           </mask>
         </defs>
         <rect width="710" height="1536" fill="#fffaf0" opacity={all?0:travel?.45:.59} mask="url(#watercolor-day-mask)" className="watercolor-map-dim"/>
+        <g className="watercolor-map-bridge-correction" aria-hidden="true"><path d="M631 1001 L710 1010 710 1095 648 1080Z" fill="#e0f0ef" opacity=".94"/><path d="M606 1220 Q656 1241 710 1218" stroke="#785c48" strokeWidth="7" fill="none" strokeLinecap="round"/><path d="M636 1204 V1232 M680 1203 V1232" stroke="#785c48" strokeWidth="5"/><text x="599" y="1191" fontSize="20" fill="#594b3d" fontFamily="serif">Brooklyn Bridge ↘</text></g>
       </svg>
     </div>
     <figcaption className="illustrated-map-caption">
