@@ -135,3 +135,6 @@ body{background:#f2ebdf}
 .inline-expense-form input,.inline-expense-form select{width:100%;min-width:0;padding:9px;border:1.5px solid #393735;border-radius:9px;background:#fffdfa;color:#393735;font-size:14px}
 .inline-expense-amount{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .inline-expense-form .expense-add{margin-top:3px}
+
+/* Travel information category switcher */
+.info-category-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0 4px}.info-category-nav button{border:1px solid var(--line,#d8d2c7);border-radius:14px;padding:11px 8px;background:var(--card,#fffdf7);color:inherit;font:inherit;font-weight:650;cursor:pointer}.info-category-nav button.active{background:#e6eee8;border-color:#799b8c;color:#234b3e}.ticket-card p{line-height:1.55}.ticket-card .full-label{margin-top:12px}
