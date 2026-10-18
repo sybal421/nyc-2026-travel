@@ -149,3 +149,6 @@ body{background:#f2ebdf}
 .trip-map .leaflet-control-attribution{font-size:9px;background:#fffdf4c9}
 .trip-map .leaflet-control-zoom a{background:#fffaf0;color:#46645b;border-color:#d9d7c7}
 .trip-map .leaflet-popup-content-wrapper{background:#fffaf0;border:1px solid #d8d4c6;border-radius:13px;box-shadow:0 4px 15px #36584d22}
+
+.sketch-label{background:none!important;border:0!important;box-shadow:none!important;pointer-events:none}
+.sketch-label span{display:block;width:max-content;max-width:130px;text-align:center;font-family:Georgia,'Times New Roman',serif;font-size:10px;font-style:italic;font-weight:700;letter-spacing:1.2px;color:#658478;text-shadow:0 1px #f9f5e8,1px 0 #f9f5e8,-1px 0 #f9f5e8;opacity:.85}
