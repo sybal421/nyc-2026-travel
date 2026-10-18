@@ -14,3 +14,76 @@
 .today-departure{margin:12px 22px 18px}
 
 .venue-hours{display:flex;flex-direction:column;align-items:flex-start;gap:5px;margin:9px 0 12px;padding:10px 12px;border-left:3px solid #8caa9c;background:rgba(121,148,129,.07);border-radius:0 8px 8px 0;font-size:.88rem;line-height:1.5}.venue-hours a{font-size:.82rem;text-decoration:underline;text-underline-offset:2px}.venue-hours-closed{border-left-color:#c66b50;background:rgba(198,107,80,.10);font-weight:600}
+
+
+/* 2026 NYC illustrated art-journal visual system */
+:root{--ink:#393735;--paper:#fffaf1;--coral:#f3a79d;--butter:#f8d780;--sky:#acd5e6;--sage:#b9d9a9;--shadow:#393735;font-family:'DM Sans','Noto Sans TC',sans-serif;color:var(--ink);background:#f2ebdf}
+body{background:#f2ebdf}
+.app{background:var(--paper)}
+.masthead{height:66px;background:#fffaf1;border-bottom:3px solid var(--ink)}
+.brand{color:var(--ink);font-weight:700;letter-spacing:1px}
+.brand-symbol{display:grid;place-items:center;width:34px;height:34px;border:3px solid var(--ink);border-radius:50%;background:var(--coral);font-size:22px;color:var(--ink);transform:rotate(-14deg)}
+.issue{color:#746f68}
+.hero{height:325px;margin:16px 17px 12px;border:3px solid var(--ink);border-radius:30px;background:var(--sky);padding:23px 22px;box-shadow:5px 6px 0 var(--ink);isolation:isolate}
+.hero:before{content:'☁';position:absolute;top:45px;right:28px;color:#fffaf1;font-size:62px;line-height:1;text-shadow:2px 2px 0 var(--ink),-2px -2px 0 var(--ink);opacity:.96}
+.hero:after{content:'✦  NYC  ✦';position:absolute;right:16px;bottom:16px;background:var(--butter);border:2px solid var(--ink);border-radius:30px;padding:7px 14px;font-size:12px;font-weight:800;transform:rotate(-6deg)}
+.hero-overline{color:var(--ink);background:var(--butter);border:2px solid var(--ink);border-radius:30px;display:inline-block;padding:7px 11px;font-size:10px;letter-spacing:1px;position:relative;z-index:2}
+.hero h1{position:relative;z-index:2;color:var(--ink);font-size:clamp(40px,9vw,62px);line-height:1.04;margin:19px 0 11px;text-shadow:2px 2px 0 #fffaf188}
+.hero h1 em{color:#c35e57}
+.hero p{position:relative;z-index:2;font-weight:700;letter-spacing:.5px}
+.hero-stickers{position:absolute;inset:0;pointer-events:none;z-index:1}
+.hero-stickers span{position:absolute;display:grid;place-items:center;filter:drop-shadow(2px 3px 0 #393735);transform:rotate(-12deg)}
+.sticker-liberty{font-size:77px;right:35px;bottom:37px}
+.sticker-art{font-size:39px;right:120px;bottom:45px}
+.sticker-bagel{font-size:32px;right:36px;top:115px}
+.sticker-star{font-size:35px;right:147px;top:106px;color:#f8d780}
+.skyline{opacity:.35;height:65px;border-bottom:3px solid var(--ink)}
+.skyline span{background:#617f91}
+.section-head h2,.page-title h2,.day-intro h2{color:var(--ink)}
+.eyebrow{color:#ba6257}
+.date-strip{gap:10px;padding-top:8px;padding-bottom:20px}
+.date-pill{flex-basis:70px;min-height:75px;border:3px solid var(--ink);border-radius:19px;background:#fffdfa;color:var(--ink);box-shadow:3px 4px 0 var(--ink);transform:translateY(0);transition:transform .15s,box-shadow .15s}
+.date-pill:nth-child(4n+2){background:#fff1c9}.date-pill:nth-child(4n+3){background:#e7f2e0}.date-pill:nth-child(4n+4){background:#e3f3f8}
+.date-pill.selected{background:var(--coral);border-color:var(--ink);color:var(--ink);box-shadow:1px 2px 0 var(--ink);transform:translateY(2px)}
+.date-pill b{font-size:12px}
+.day-intro{margin:2px 20px 18px;padding:16px 17px;background:#fffdf8;border:2px solid var(--ink);border-radius:20px;box-shadow:3px 4px 0 #39373525}
+.day-intro p,.page-title p{color:#6b6864}
+.timeline{padding-left:23px;padding-right:22px}
+.rail{width:15px}.rail:after{left:6px;border-left:2px dashed var(--ink);background:none;width:0;top:16px}
+.dot{height:14px;width:14px;border:3px solid var(--ink);background:var(--butter)}
+.stop-main{background:#fffdf8;border:2px solid var(--ink);border-radius:21px;padding:12px 13px 13px;margin:0 0 15px;box-shadow:3px 4px 0 #39373520}
+.stop-top{min-height:26px}
+.time{color:var(--ink);background:var(--butter);border:2px solid var(--ink);border-radius:24px;padding:3px 8px;font-weight:800}
+.stop-heading{color:var(--ink);padding-top:9px}
+.stop-heading strong{font-size:15px}
+.transport{color:#686663}
+.status{border:1.5px solid var(--ink);color:var(--ink);background:#fffdf8;font-weight:700}
+.status.confirmed{background:var(--sage);color:var(--ink)}.status.pending{background:var(--butter);color:var(--ink)}.status.backup{background:var(--sky);color:var(--ink)}.status.verify{background:var(--coral);color:var(--ink)}
+.stop-detail{border-left:3px solid var(--sky);color:#615e59}
+.micro{border:2px solid var(--ink);border-radius:12px;background:#fffaf1;color:var(--ink)}
+.micro.done{background:var(--sage);color:var(--ink)}
+.small-link{color:#ad5c50}
+.notice{background:#fff0c8;border:2px solid var(--ink);border-left:6px solid var(--ink);border-radius:15px;color:var(--ink)}
+.note-section{background:#e8f3e4;border:2px solid var(--ink);border-radius:22px}
+.flight-card{border:2.5px solid var(--ink)!important;border-radius:23px!important;background:#fffdf8!important;box-shadow:4px 5px 0 #39373526}
+.flight-title{color:var(--ink)}
+.flight-card:nth-child(4n+1){border-top:10px solid var(--sky)!important}
+.flight-card:nth-child(4n+2){border-top:10px solid var(--coral)!important}
+.flight-card:nth-child(4n+3){border-top:10px solid var(--sage)!important}
+.flight-card:nth-child(4n+4){border-top:10px solid var(--butter)!important}
+.flight-leg{margin:12px 0;padding:11px 12px;border:2px dashed #8c8580;border-radius:14px;background:#fffaf1;line-height:1.7}
+.flight-leg>strong{display:inline-block;background:var(--butter);border:2px solid var(--ink);border-radius:99px;padding:2px 9px}
+.flight-connection{background:#e8f4e1;border-radius:9px;padding:8px}
+.flight-summary{font-weight:800}
+.task,.ticket-card,.backup-row{border-color:#b4aaa0}
+.cloud-panel{background:#eaf3e5;border:2px solid var(--ink);border-radius:17px;color:var(--ink)}
+.cloud-top button,.cloud-controls button{border:2px solid var(--ink);border-radius:13px;background:var(--butter);color:var(--ink)}
+.map-day-scroll button{border:2px solid var(--ink);border-radius:15px;color:var(--ink);box-shadow:2px 2px 0 #39373544}
+.map-day-scroll button.active{background:var(--coral);color:var(--ink);border-color:var(--ink)}
+.trip-map{border:3px solid var(--ink);border-radius:22px}
+.route-stop{background:#e7f2e1;color:var(--ink);border:1px solid #a5c2a0;border-radius:11px}
+.route-stop-num{color:#b45550}
+.route-day-heading strong{color:var(--ink)}
+.edit-toggle,.outline-wide{border:2px solid var(--ink);border-radius:15px;background:#fffaf1;color:var(--ink);box-shadow:2px 3px 0 #39373533}
+@media(max-width:400px){.hero{height:300px}.hero h1{font-size:43px}.sticker-liberty{font-size:61px;right:20px}.sticker-art{right:90px;font-size:31px}.hero:before{right:17px;font-size:47px}.hero-stickers .sticker-star{right:120px}}
+@media(min-width:721px){body{background:#eee5d7}.app{box-shadow:0 0 40px #39373522}}
