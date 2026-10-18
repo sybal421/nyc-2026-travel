@@ -1,37 +1,40 @@
-import {useEffect,useRef} from 'react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
 import {days} from './tripData';
-
-type Area={name:string;lat:number;lng:number};
-const zones:Record<string,Area[]>={
-'1024':[{name:'Penn Station',lat:40.7506,lng:-73.9935},{name:'Interfaith Retreats／Chelsea',lat:40.7496,lng:-73.9954}],
-'1025':[{name:'Verdi Square',lat:40.7781,lng:-73.9824},{name:'The Dakota',lat:40.7765,lng:-73.9761},{name:'Strawberry Fields',lat:40.7757,lng:-73.9749},{name:'Central Park 湖畔',lat:40.7783,lng:-73.9684},{name:'Cooper Hewitt',lat:40.7844,lng:-73.9578}],
-'1026':[{name:'The Met',lat:40.7794,lng:-73.9632}],
-'1027':[{name:'Printed Matter',lat:40.7496,lng:-74.0065},{name:'Chelsea Market',lat:40.7424,lng:-74.0060},{name:'Gansevoort Plaza',lat:40.7398,lng:-74.0069},{name:'Whitney Museum 外觀',lat:40.7396,lng:-74.0089},{name:'Little Island',lat:40.7420,lng:-74.0105}],
-'1028':[{name:'Rector Park East／Figure Drawing',lat:40.7091,lng:-74.0167},{name:'Wagner Park／可選速寫課',lat:40.7050,lng:-74.0184},{name:'SoHo／Prince Street',lat:40.7247,lng:-73.9991},{name:'West Village',lat:40.7358,lng:-74.0036}],
-'1029':[{name:'Flatiron Building',lat:40.7411,lng:-73.9897},{name:'Madison Square Park',lat:40.7425,lng:-73.9877},{name:'Bryant Park',lat:40.7536,lng:-73.9832},{name:'New York Public Library',lat:40.7532,lng:-73.9822},{name:'MoMA',lat:40.7614,lng:-73.9776},{name:'Rockefeller Center',lat:40.7587,lng:-73.9787},{name:'New Amsterdam Theatre',lat:40.7561,lng:-73.9885}],
-'1030':[{name:'Brooklyn Bridge 行人入口',lat:40.7132,lng:-74.0046},{name:'Brooklyn Bridge',lat:40.7061,lng:-73.9969},{name:'Washington Street／DUMBO',lat:40.7032,lng:-73.9893},{name:'Pebble Beach',lat:40.7045,lng:-73.9891},{name:'Brooklyn Heights Promenade',lat:40.6968,lng:-73.9973},{name:'DUMBO／Fulton Ferry Landing',lat:40.7034,lng:-73.9946},{name:'Wall St／Pier 11',lat:40.7035,lng:-74.0060}],
-'1031':[{name:'Greenwich Village／Halloween Parade',lat:40.7324,lng:-73.9982}],
-'1101':[{name:'70 Pine Street・凌晨出發',lat:40.7063,lng:-74.0076},{name:'JFK Terminal 4・07:10 起飛',lat:40.6446,lng:-73.7822}],
-'1102':[{name:'桃園機場第二航廈・20:30 抵達',lat:25.0777,lng:121.2328}]
-};
-const walkingSegments:Record<string,number[][]>={
-'1024':[[0,1]],'1025':[[0,1,2,3,4]],'1026':[],'1027':[[0,1,2,3,4]],'1028':[[2,3]],'1029':[[0,1,2,3,4,5,6]],'1030':[[0,1,2,3,4,5]],'1031':[],'1101':[],'1102':[]
-};
-const palette=['#bd6c4e','#577d67','#b18a45','#597e9b','#9c688b','#557c7e','#aa7751','#7a719e','#70905d','#9b6b6b'];
+type Zone={id:string;label:string;path:string;fill:string;days:string[];x:number;y:number};
+const zones:Zone[]=[
+{id:'uws',label:'Upper West Side',path:'M120 140 L196 140 L196 282 L113 282 Z',fill:'#d9dfb4',days:['1025'],x:154,y:210},
+{id:'park',label:'Central Park',path:'M200 140 L244 140 L244 282 L200 282 Z',fill:'#b8d8b5',days:['1025'],x:222,y:207},
+{id:'ues',label:'Upper East Side',path:'M248 140 L321 150 L321 282 L248 282 Z',fill:'#b8d7e9',days:['1025','1026'],x:284,y:213},
+{id:'midtown',label:'Midtown',path:'M113 286 L322 286 L328 390 L108 390 Z',fill:'#f4dfa8',days:['1029'],x:220,y:334},
+{id:'chelsea',label:'Chelsea',path:'M108 395 L208 395 L208 476 L103 470 Z',fill:'#efc0b7',days:['1024','1027'],x:157,y:433},
+{id:'flatiron',label:'Flatiron',path:'M211 395 L330 395 L332 447 L211 447 Z',fill:'#c6d5bf',days:['1029'],x:269,y:422},
+{id:'west',label:'West Village',path:'M102 475 L209 481 L207 550 L117 551 Z',fill:'#bfd9e9',days:['1028'],x:161,y:514},
+{id:'east',label:'East Village / Little Ukraine',path:'M213 451 L334 450 L340 550 L211 550 Z',fill:'#edb99e',days:['1031'],x:275,y:500},
+{id:'soho',label:'SoHo',path:'M121 556 L211 555 L214 616 L138 614 Z',fill:'#f5dca0',days:['1028'],x:174,y:582},
+{id:'les',label:'Lower East Side',path:'M215 555 L341 554 L327 627 L217 617 Z',fill:'#c5d8e8',days:[],x:276,y:589},
+{id:'tribeca',label:'Tribeca',path:'M139 619 L216 621 L215 684 L157 683 Z',fill:'#bcd3c6',days:[],x:180,y:650},
+{id:'chinatown',label:'Chinatown',path:'M219 622 L327 632 L308 685 L219 684 Z',fill:'#d7c6db',days:[],x:268,y:654},
+{id:'fidi',label:'Financial District',path:'M158 689 L309 690 L280 785 L231 816 L177 765 Z',fill:'#efc2bc',days:['1027','1028','1030','1101'],x:234,y:739}
+];
+const colors=['#db9977','#7ca995','#77abc9','#d2a65e','#a99cc6','#80aab2'];
+const dayLabel=(id:string)=>days.find(d=>d.id===id)?.date.slice(5).replace('-','/')||'';
 export default function TripAreaMap({selectedDay,onSelectDay}:{selectedDay:string;onSelectDay:(id:string)=>void}){
- const container=useRef<HTMLDivElement>(null);const map=useRef<L.Map|null>(null);const layers=useRef<L.LayerGroup|null>(null);
- useEffect(()=>{if(!container.current||map.current)return;const m=L.map(container.current,{scrollWheelZoom:false}).setView([40.744,-73.986],11);// Hand-drawn-inspired geographic sketch, not a turn-by-turn navigation map.
-const land=(coords:[number,number][],fill:string)=>L.polygon(coords,{color:'#b9c9bb',weight:1.4,fillColor:fill,fillOpacity:1,interactive:false}).addTo(m);
-land([[40.695,-74.021],[40.703,-74.018],[40.710,-74.014],[40.717,-74.012],[40.723,-74.010],[40.731,-74.009],[40.742,-74.010],[40.752,-74.009],[40.762,-74.007],[40.773,-73.999],[40.786,-73.981],[40.802,-73.971],[40.813,-73.963],[40.816,-73.951],[40.801,-73.938],[40.787,-73.944],[40.772,-73.961],[40.759,-73.968],[40.748,-73.971],[40.736,-73.974],[40.726,-73.978],[40.716,-73.984],[40.704,-73.993],[40.695,-74.002]],'#f6f0df');
-land([[40.680,-74.035],[40.685,-74.019],[40.690,-74.011],[40.696,-74.006],[40.702,-73.998],[40.708,-73.989],[40.718,-73.972],[40.727,-73.956],[40.736,-73.944],[40.749,-73.935],[40.759,-73.920],[40.755,-73.896],[40.737,-73.893],[40.723,-73.905],[40.705,-73.924],[40.690,-73.946],[40.676,-73.965],[40.666,-73.984],[40.663,-74.014]],'#eee7d6');
-land([[40.737,-73.961],[40.755,-73.962],[40.774,-73.958],[40.784,-73.946],[40.796,-73.941],[40.807,-73.938],[40.807,-73.921],[40.795,-73.922],[40.779,-73.931],[40.760,-73.944]],'#f2e9d8');
-L.polygon([[40.767,-73.981],[40.772,-73.977],[40.800,-73.958],[40.798,-73.950],[40.768,-73.973]],{stroke:false,fillColor:'#c5d9b9',fillOpacity:1,interactive:false}).addTo(m);
-L.polygon([[40.704,-74.020],[40.712,-74.019],[40.716,-74.013],[40.709,-74.012]],{stroke:false,fillColor:'#c5d9b9',fillOpacity:1,interactive:false}).addTo(m);
-const label=(point:[number,number],name:string)=>L.marker(point,{interactive:false,icon:L.divIcon({className:'sketch-label',html:'<span>'+name+'</span>',iconSize:[130,20],iconAnchor:[65,10]})}).addTo(m);
-label([40.786,-73.986],'CENTRAL PARK');label([40.744,-73.994],'MANHATTAN');label([40.693,-73.968],'BROOKLYN');label([40.753,-73.912],'QUEENS');label([40.724,-74.026],'HUDSON RIVER');label([40.721,-73.965],'EAST RIVER');
-L.control.attribution({prefix:false}).addAttribution('Illustrated area sketch · approximate locations').addTo(m);map.current=m;layers.current=L.layerGroup().addTo(m);setTimeout(()=>m.invalidateSize(),100);return()=>{m.remove();map.current=null;layers.current=null}},[]);
- useEffect(()=>{const m=map.current,group=layers.current;if(!m||!group)return;group.clearLayers();const bounds:L.LatLngExpression[]=[];days.forEach((day,i)=>{const active=selectedDay===day.id;const areas=zones[day.id]||[];const color=palette[i%palette.length];areas.forEach((area,j)=>{const point:L.LatLngExpression=[area.lat,area.lng];if((active||selectedDay==='all')&&area.lat>35&&area.lng<0)bounds.push(point);const marker=L.circleMarker(point,{radius:active?9:5,color:'#ffffff',weight:active?3:1.5,fillColor:color,fillOpacity:active?1:.8});const popup=document.createElement('div');const title=document.createElement('strong');title.textContent=day.date.slice(5).replace('-','/')+' · '+area.name;popup.appendChild(title);const subtitle=document.createElement('div');subtitle.textContent=day.title;popup.appendChild(subtitle);marker.bindPopup(popup);marker.on('click',()=>onSelectDay(day.id));marker.addTo(group)});if(active){(walkingSegments[day.id]||[]).forEach(segment=>{if(segment.length>1)L.polyline(segment.map(j=>[areas[j].lat,areas[j].lng] as L.LatLngExpression),{color,weight:4,opacity:.85,dashArray:'6,7'}).addTo(group)})}});if(bounds.length)m.fitBounds(L.latLngBounds(bounds),{padding:[35,35],maxZoom:selectedDay==='all'?12:15})},[selectedDay,onSelectDay]);
- return <div className="trip-map" ref={container} role="region" aria-label="紐約每日活動區域互動地圖"/>;
+ const all=selectedDay==='all';
+ const activeZones=zones.filter(z=>all||z.days.includes(selectedDay));
+ const brooklyn=all||selectedDay==='1030';
+ return <div className="illustrated-map" role="img" aria-label="手繪風格紐約活動區域圖；依所選日期標亮區域">
+ <svg viewBox="0 0 460 880" xmlns="http://www.w3.org/2000/svg" className="illustrated-map-svg">
+ <rect width="460" height="880" fill="#fbf8f0"/>
+ <text x="230" y="52" textAnchor="middle" className="map-sketch-title">NEW YORK NOTES</text>
+ <path d="M85 66 Q228 57 370 65" fill="none" stroke="#34352d" strokeWidth="2.5" strokeLinecap="round"/>
+ <path d="M103 117 Q75 183 86 287 Q74 387 79 467 Q81 583 128 694 Q131 764 173 800 L225 845 L306 816 Q340 768 341 693 Q362 594 354 478 Q352 347 348 245 L338 139" fill="none" stroke="#a8d5e3" strokeWidth="36" strokeLinecap="round" opacity=".75"/>
+ <path d="M110 132 L325 139 L342 248 L351 474 L345 592 L319 703 L280 789 L232 830 L174 787 L140 690 L108 558 L96 472 L102 375 L106 274 Z" fill="#f3eedf" stroke="#383c34" strokeWidth="2.4" strokeLinejoin="round"/>
+ <path d="M115 137 L319 147 L322 137 L113 130 Z" fill="#e3cddd"/>
+ <text x="218" y="112" textAnchor="middle" className="map-sketch-subtitle">MANHATTAN</text>
+ {zones.map((z,i)=>{const active=all||z.days.includes(selectedDay);const selectable=z.days.length>0;return <g key={z.id} onClick={()=>{if(selectable&&z.days.length===1)onSelectDay(z.days[0]);else if(selectable)onSelectDay(z.days.includes(selectedDay)?selectedDay:z.days[0])}} style={{cursor:selectable?'pointer':'default'}}><path d={z.path} fill={z.fill} stroke="#fffaf1" strokeWidth="4" strokeLinejoin="round" opacity={active?1:.19}/>{active&&!all&&<path d={z.path} fill="none" stroke="#a8664c" strokeWidth="4" strokeLinejoin="round"/>}<text x={z.x} y={z.y} textAnchor="middle" className={'map-zone-label '+(active?'active':'')} opacity={active?1:.38}>{z.label==='East Village / Little Ukraine'?<><tspan x={z.x} dy="-7">East Village</tspan><tspan x={z.x} dy="16">Little Ukraine</tspan></>:z.label==='Upper West Side'?<><tspan x={z.x} dy="-7">Upper West</tspan><tspan x={z.x} dy="16">Side</tspan></>:z.label==='Upper East Side'?<><tspan x={z.x} dy="-7">Upper East</tspan><tspan x={z.x} dy="16">Side</tspan></>:z.label==='West Village'?<><tspan x={z.x} dy="-7">West</tspan><tspan x={z.x} dy="16">Village</tspan></>:z.label==='Lower East Side'?<><tspan x={z.x} dy="-7">Lower East</tspan><tspan x={z.x} dy="16">Side</tspan></>:z.label==='Financial District'?<><tspan x={z.x} dy="-7">Financial</tspan><tspan x={z.x} dy="16">District</tspan></>:z.label}</text></g>})}
+ <text x="37" y="405" transform="rotate(-87 37 405)" className="map-river-label">Hudson River</text><text x="400" y="510" transform="rotate(87 400 510)" className="map-river-label">East River</text>
+ <g opacity={brooklyn?1:.3} onClick={()=>onSelectDay('1030')} style={{cursor:'pointer'}}><path d="M350 646 Q388 612 448 629 L449 827 L331 827 Q365 748 350 646" fill="#d4c4e5" stroke="#fff" strokeWidth="3"/><text x="399" y="726" textAnchor="middle" className="map-zone-label">Brooklyn</text><text x="399" y="745" textAnchor="middle" className="map-zone-label">DUMBO</text><path d="M326 679 L377 682 M326 690 L377 693" stroke="#34352d" strokeWidth="2"/><path d="M335 675 L335 701 M367 675 L367 702" stroke="#34352d" strokeWidth="2"/></g>
+ <text x="230" y="864" textAnchor="middle" className="map-footnote">illustrated neighborhoods · not to scale</text>
+ </svg>
+ <div className="illustrated-map-caption"><strong>{all?'十日旅程 · 活動區域':selectedDay==='1102'?'11/02 · 抵達台灣':selectedDay==='1101'?'11/01 · JFK 清晨返程':dayLabel(selectedDay)+' · '+(days.find(d=>d.id===selectedDay)?.title||'')}</strong><span>{all?'選擇上方日期，地圖會標亮當日活動街區。':selectedDay==='1101'||selectedDay==='1102'?'交通日 · 無曼哈頓觀光區域':'亮色區塊為當日行程範圍；示意圖非導航地圖。'}</span></div>
+ </div>;
 }
