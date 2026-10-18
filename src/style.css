@@ -87,3 +87,38 @@ body{background:#f2ebdf}
 .edit-toggle,.outline-wide{border:2px solid var(--ink);border-radius:15px;background:#fffaf1;color:var(--ink);box-shadow:2px 3px 0 #39373533}
 @media(max-width:400px){.hero{height:300px}.hero h1{font-size:43px}.sticker-liberty{font-size:61px;right:20px}.sticker-art{right:90px;font-size:31px}.hero:before{right:17px;font-size:47px}.hero-stickers .sticker-star{right:120px}}
 @media(min-width:721px){body{background:#eee5d7}.app{box-shadow:0 0 40px #39373522}}
+
+
+/* Compact map + travel expense journal */
+.trip-map{height:235px;max-height:235px;margin-top:12px;margin-bottom:8px}
+.map-route-summary{margin:12px 22px 22px}
+.route-day{padding:12px 0}
+.route-day-heading{margin-bottom:7px}
+.route-stops{gap:5px}
+.route-stop{font-size:11px;padding:4px 7px}
+.all-day{margin-bottom:10px}
+.expense-panel{margin:12px 20px 30px}
+.expense-totals{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.expense-totals>div{min-width:0;background:#f8d780;border:2.5px solid #393735;border-radius:20px;padding:16px 11px;box-shadow:3px 4px 0 #39373525}
+.expense-totals>div:nth-child(2){background:#b9d9a9}
+.expense-totals small{display:block;font-size:11px;color:#544c46}
+.expense-totals strong{display:block;margin-top:8px;font-size:clamp(17px,4.8vw,24px);overflow-wrap:anywhere}
+.rate-field{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:20px 0;font-size:13px}
+.rate-field input{width:80px;border:2px solid #393735;border-radius:9px;padding:7px;background:#fffdf8}
+.rate-field small{color:#81766e}
+.expense-form,.expense-breakdown{margin-top:16px;background:#fffdf8;border:2.5px solid #393735;border-radius:22px;padding:17px;box-shadow:3px 4px 0 #39373519}
+.expense-form h3,.expense-breakdown h3{margin:0 0 15px;font-size:17px}
+.expense-fields{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.expense-fields label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700;min-width:0}
+.expense-fields input,.expense-fields select{width:100%;min-width:0;background:#fffaf1;border:1.8px solid #393735;border-radius:11px;padding:10px;font-size:14px;color:#393735}
+.expense-wide{grid-column:1/-1}
+.expense-add{width:100%;margin-top:16px;padding:13px;border:2px solid #393735;border-radius:15px;background:#f3a79d;font-weight:800;color:#393735;box-shadow:2px 3px 0 #393735}
+.expense-stat{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px dashed #b5aaa0;padding:10px 0;font-size:13px}
+.expense-entry{display:flex;align-items:center;gap:8px;border-top:1px dashed #b5aaa0;padding:12px 0}
+.expense-entry>div{flex:1;min-width:0}
+.expense-entry strong{font-size:13px}
+.expense-entry small{display:block;color:#7d746e;font-size:11px;margin-top:3px}
+.expense-entry button{border:2px solid #393735;border-radius:50%;width:27px;height:27px;flex-shrink:0;background:#fff0e9;color:#393735}
+.bottom-nav{gap:0}
+.bottom-nav button{min-width:0}
+@media(max-width:400px){.expense-fields{gap:8px}.expense-form,.expense-breakdown{padding:13px}.expense-totals>div{padding:12px 8px}}
