@@ -182,3 +182,5 @@ body{background:#f2ebdf}
 .map-split-layout{display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);align-items:start;gap:18px;margin-top:12px}
 .map-split-visual{min-width:0}.map-split-layout .watercolor-map{max-width:340px;margin:0 auto}.map-split-layout .map-route-summary{min-width:0;margin-top:0;max-height:620px;overflow:auto}.map-split-layout .map-day-summary{margin-top:8px}
 @media(max-width:680px){.map-split-layout{grid-template-columns:minmax(0,42%) minmax(0,58%);gap:10px}.map-split-layout .watercolor-map{max-width:100%}.map-split-layout .map-route-summary{max-height:500px}.map-split-layout .route-day{padding:9px 6px}.map-split-layout .route-stops{gap:5px}.map-split-layout .route-stop{font-size:12px}.map-split-layout .illustrated-map-caption{padding:8px 5px}.map-split-layout .illustrated-map-caption span{font-size:11px}}
+
+.hotel-facts{display:grid;gap:7px;margin:12px 0;padding:12px;border-radius:12px;background:rgba(215,203,179,.15)}.hotel-facts>div{display:grid;grid-template-columns:64px minmax(0,1fr);gap:9px;align-items:start;font-size:13px;line-height:1.5}.hotel-facts b{color:#76644f}.hotel-facts span{min-width:0}
