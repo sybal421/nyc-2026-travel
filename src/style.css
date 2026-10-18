@@ -122,3 +122,16 @@ body{background:#f2ebdf}
 .bottom-nav{gap:0}
 .bottom-nav button{min-width:0}
 @media(max-width:400px){.expense-fields{gap:8px}.expense-form,.expense-breakdown{padding:13px}.expense-totals>div{padding:12px 8px}}
+
+
+/* Expense entry attached to each itinerary stop */
+.stop-expense{margin:12px 0 10px;padding:10px;border:1.8px dashed #b9a89c;border-radius:15px;background:#fff9ed}
+.stop-expense-head{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;font-weight:800;color:#393735}
+.stop-expense-head button{background:#f8d780;border:1.8px solid #393735;border-radius:99px;padding:5px 10px;font-size:12px;font-weight:800;color:#393735;flex-shrink:0}
+.stop-expense-line{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px dotted #b9a89c;font-size:12px}
+.stop-expense-line span{flex:1;min-width:0}.stop-expense-line strong{white-space:nowrap}.stop-expense-line button{border:0;background:none;font-size:18px;color:#a24f48}
+.inline-expense-form{margin-top:11px;display:grid;gap:9px}
+.inline-expense-form label{display:grid;gap:4px;font-size:12px;font-weight:700}
+.inline-expense-form input,.inline-expense-form select{width:100%;min-width:0;padding:9px;border:1.5px solid #393735;border-radius:9px;background:#fffdfa;color:#393735;font-size:14px}
+.inline-expense-amount{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.inline-expense-form .expense-add{margin-top:3px}
