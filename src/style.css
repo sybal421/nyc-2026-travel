@@ -138,3 +138,14 @@ body{background:#f2ebdf}
 
 /* Travel information category switcher */
 .info-category-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0 4px}.info-category-nav button{border:1px solid var(--line,#d8d2c7);border-radius:14px;padding:11px 8px;background:var(--card,#fffdf7);color:inherit;font:inherit;font-weight:650;cursor:pointer}.info-category-nav button.active{background:#e6eee8;border-color:#799b8c;color:#234b3e}.ticket-card p{line-height:1.55}.ticket-card .full-label{margin-top:12px}
+
+/* Compact single-row travel information tabs */
+.info-category-nav{display:flex;flex-wrap:nowrap;gap:4px;margin:12px 0 3px;width:100%;overflow-x:auto;scrollbar-width:none}
+.info-category-nav::-webkit-scrollbar{display:none}
+.info-category-nav button{flex:1 0 auto;min-width:0;white-space:nowrap;font-size:clamp(10px,2.55vw,12px);line-height:1.2;padding:9px 5px;border-radius:10px;font-weight:600;letter-spacing:-.3px}
+/* Illustrated, deliberately schematic map styling */
+.trip-map{background:#d8e9e6;border:1px solid #d4d6c8;box-shadow:0 5px 18px #46635b13}
+.trip-map .leaflet-container{background:#d8e9e6}
+.trip-map .leaflet-control-attribution{font-size:9px;background:#fffdf4c9}
+.trip-map .leaflet-control-zoom a{background:#fffaf0;color:#46645b;border-color:#d9d7c7}
+.trip-map .leaflet-popup-content-wrapper{background:#fffaf0;border:1px solid #d8d4c6;border-radius:13px;box-shadow:0 4px 15px #36584d22}
