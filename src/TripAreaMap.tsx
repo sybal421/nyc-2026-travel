@@ -5,9 +5,9 @@ type Area = {id:string;shape:string;days:string[]};
 const areas:Area[]=[
   {id:'upper-west-side',shape:'M170 160 L340 178 360 492 212 462Z',days:['1025']},
   {id:'central-park',shape:'M340 170 L468 194 477 515 359 507Z',days:['1025']},
-  {id:'upper-east-side',shape:'M462 205 L635 235 652 490 480 508Z',days:['1025','1026']},
+  {id:'upper-east-side',shape:'M462 205 L635 235 652 490 480 508Z',days:['1025','1029']},
   {id:'roosevelt-island',shape:'M830 153 Q909 154 914 232 L862 520 Q804 510 795 434Z',days:['1026']},
-  {id:'midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1029']},
+  {id:'midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1026']},
   {id:'chelsea',shape:'M205 628 L455 687 453 866 220 825Z',days:['1024','1027']},
   {id:'flatiron',shape:'M457 685 L635 688 647 780 462 787Z',days:['1029']},
   {id:'west-village',shape:'M205 834 L456 880 453 1031 225 1026Z',days:['1028','1031']},
@@ -21,10 +21,10 @@ const areas:Area[]=[
 ];
 const extra:Record<string,string[]>={
   '1025':['Cooper Hewitt · Upper East Side'],
-  '1026':['Roosevelt Island · 島外延伸'],
+  '1026':['Flatiron · MoMA · Midtown','Roosevelt Island · 黃昏纜車'],
   '1027':['Meatpacking · High Line · Little Island'],
   '1028':['Rector Park East · Battery Park City'],
-  '1029':['MoMA · Broadway · Midtown'],
+  '1029':['Central Park · The Met · Upper East Side','Broadway · Aladdin'],
   '1030':['Brooklyn Bridge · DUMBO · Brooklyn Heights','Wall Street · Pier 11'],
   '1031':['Little Ukraine · East Village','Greenwich Village · 萬聖節遊行'],
 };
