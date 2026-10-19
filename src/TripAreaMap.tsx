@@ -21,7 +21,7 @@ const areas:Area[]=[
 ];
 const extra:Record<string,string[]>={
   '1025':['Cooper Hewitt · Upper East Side'],
-  '1026':['Flatiron · MoMA · Midtown','Roosevelt Island · 黃昏纜車'],
+  '1026':['Flatiron · MoMA · Midtown','纜車曼哈頓站：E 59th St × 2nd Ave（東河西岸）','Roosevelt Island 站：島上纜車站（非島中央）'],
   '1027':['Meatpacking · High Line · Little Island'],
   '1028':['Rector Park East · Battery Park City'],
   '1029':['Central Park · The Met · Upper East Side','Broadway · Aladdin'],
