@@ -1,1 +1,20 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#f6f2ea"/><meta name="description" content="2026 紐約旅行手機手冊"/><link rel="manifest" href="/manifest.webmanifest"/><link rel="icon" href="/icon.svg"/><title>NYC · 2026 旅行手冊</title></head><body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body></html>
+<!doctype html><html lang="zh-Hant"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#f6f2ea"/><meta name="description" content="2026 紐約旅行手機手冊"/><link rel="manifest" href="/manifest.webmanifest"/><link rel="icon" href="/icon.svg"/><title>NYC · 2026 旅行手冊</title></head><body><div id="root"></div><script>
+(function(){
+var root=document.getElementById('root');
+var showed=false;
+function fail(message){
+ if(showed||root.children.length)return;
+ showed=true;
+ var panel=document.createElement('div');
+ panel.style.cssText='padding:28px 20px;max-width:520px;margin:12vh auto;font-family:system-ui,sans-serif;color:#34302b;line-height:1.7';
+ var h=document.createElement('h2');h.textContent='行程手冊暫時無法載入';
+ var p=document.createElement('p');p.textContent='可能是舊版快取或程式載入錯誤。請先重新整理；若持續發生，請將下方錯誤訊息傳給我。';
+ var pre=document.createElement('pre');pre.style.cssText='white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;background:#f2eee8;padding:12px;border-radius:8px';pre.textContent=message||'畫面未完成載入';
+ var btn=document.createElement('button');btn.textContent='重新載入';btn.style.cssText='padding:12px 18px;border:0;border-radius:8px;background:#313e36;color:white';btn.onclick=function(){location.reload()};
+ panel.append(h,p,pre,btn);root.replaceChildren(panel);
+}
+window.addEventListener('error',function(e){setTimeout(function(){fail(e.message||'資源載入失敗')},0)});
+window.addEventListener('unhandledrejection',function(e){setTimeout(function(){fail(String(e.reason&&e.reason.message||e.reason))},0)});
+setTimeout(function(){fail('頁面在 8 秒內未成功顯示，請檢查網路或快取。')},8000);
+})();
+</script><script type="module" src="/src/main.tsx"></script></body></html>
