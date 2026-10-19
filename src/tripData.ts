@@ -110,7 +110,7 @@ export const recommendations:Recommendation[]=[
 ["Casey Rubber Stamps","商店",["1031"],"East Village","特色手工橡皮章與印刷工具；路過值得進去",undefined,"322 East 11th Street, New York"],
 ["Pageant Print Shop","商店",["1031"],"East Village","老地圖、復古海報與版畫，適合挖寶",undefined,"69 East 4th Street, New York"],
 ["Pink Olive","商店",["1031"],"East Village","創意禮品、卡片、文具與生活小物",undefined,"439 East 9th Street, New York"],
-["MoMA Design Store 53rd St","商店",["1026"],"MoMA","展後順逛設計商品與文具，免另排購物時段",undefined,"44 West 53rd Street, New York"],"Chelsea／Flatiron 備案","海報與平面設計文創；週一及週二不開，10/27 不建議專程前往",undefined,"119 West 23rd Street, New York"]
+["MoMA Design Store 53rd St","商店",["1026"],"MoMA","展後順逛設計商品與文具，免另排購物時段",undefined,"44 West 53rd Street, New York"]
 ,
 ["Gray's Papaya",'餐飲',["1025"],"Upper West Side · W 72nd St","紐約經典熱狗與木瓜飲；早餐或散步前小吃","5–12","2090 Broadway, New York"],
 ["Los Tacos No. 1 · Madison Square Park",'餐飲',["1026"],"Flatiron","現做墨西哥塔可，上午 Flatiron 路線可外帶","5–15","27 East 23rd Street, New York"],
