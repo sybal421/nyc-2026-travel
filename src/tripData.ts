@@ -111,6 +111,18 @@ export const recommendations:Recommendation[]=[
 ["Pageant Print Shop","商店",["1031"],"East Village","老地圖、復古海報與版畫，適合挖寶",undefined,"69 East 4th Street, New York"],
 ["Pink Olive","商店",["1031"],"East Village","創意禮品、卡片、文具與生活小物",undefined,"439 East 9th Street, New York"],
 ["MoMA Design Store 53rd St","商店",["1026"],"MoMA","展後順逛設計商品與文具，免另排購物時段",undefined,"44 West 53rd Street, New York"],"Chelsea／Flatiron 備案","海報與平面設計文創；週一及週二不開，10/27 不建議專程前往",undefined,"119 West 23rd Street, New York"]
+,
+["Gray's Papaya",'餐飲',["1025"],"Upper West Side · W 72nd St","紐約經典熱狗與木瓜飲；早餐或散步前小吃","5–12","2090 Broadway, New York"],
+["Los Tacos No. 1 · Madison Square Park",'餐飲',["1026"],"Flatiron","現做墨西哥塔可，上午 Flatiron 路線可外帶","5–15","27 East 23rd Street, New York"],
+["Los Tacos No. 1 · Chelsea Market",'餐飲',["1027"],"Chelsea Market","必吃塔可；與 Chelsea Market 正式行程完全同路","5–15","75 Ninth Avenue, New York"],
+["Xi'an Famous Foods · Financial District",'餐飲',["1027"],"70 Pine 附近","換住宿後可選平價手工麵；多款帶辣，點餐先確認不辣選項","10–17","8 Liberty Place, New York"],
+["Champion Pizza · SoHo",'餐飲',["1028"],"SoHo / Nolita","平價紐約披薩切片，逛文具店途中快吃","4–10","17 Cleveland Place, New York"],
+["Los Tacos No. 1 · Times Square",'餐飲',["1029"],"New Amsterdam Theatre","Aladdin 開演前快速吃塔可，步行距離短","5–15","229 West 43rd Street, New York"],
+["7th Street Burger · DUMBO",'餐飲',["1030"],"DUMBO / Brooklyn Bridge Park","Smash burger 與薯條，河岸散步可順路外帶","9–18","17 Old Fulton Street, Brooklyn, New York"],
+["Front Street Pizza",'餐飲',["1030"],"DUMBO","紐約披薩切片；比河岸觀光餐廳容易控制預算","5–13","80 Front Street, Brooklyn, New York"],
+["Xi'an Famous Foods · East Village",'餐飲',["1031"],"East Village / Little Ukraine","手工麵與肉夾饃；口味可能偏辣，點餐前確認","10–17","129 Second Avenue, New York"],
+["7th Street Burger · East Village",'餐飲',["1031"],"East Village","平價現做漢堡，逛店途中快速吃","9–18","91 East 7th Street, New York"],
+["$1.50 Fresh Pizza · East Village",'餐飲',["1031"],"East Village","超平價披薩切片；小吃備案，不用特地繞路","2–8","71 Second Avenue, New York"]
 ].map((a:any)=>({name:a[0],type:a[1],dayIds:a[2],nearStop:a[3],why:a[4],estimatedBudgetUSD:a[5],address:a[6],openingHours:'待查證',verified:false}));
 export const backupActivities: {day:string;title:string;time:string;address:string;note:string}[]=[{day:'10/26',title:'West Thames Park Pickleball',time:'10:00–13:00',address:'West Thames Park, New York, NY',note:'10:00–13:00，與 Midtown 主線衝突'},{day:'10/28',title:'Landscape Art Class',time:'14:00–16:00',address:'Robert F. Wagner Jr. Park, 20 Battery Pl, New York, NY',note:'14:00–16:00，Wagner Park，取代 Bushwick'},{day:'10/30',title:'Gotham Park K-Pop Dance',time:'18:00–19:00',address:'Gotham Park, Manhattan, New York',note:'18:00–19:00，建議註冊；僅取消 Morgan 時可參加'},{day:'11/01',title:'Fulton St A 線 → Howard Beach → AirTrain',time:'凌晨（依航班回推）',address:'Fulton St Station, New York, NY',note:'凌晨約 90–110 分或更久，前一晚核對施工與班次；異動改叫車'}];
 export const walkRecommendations:Recommendation[]=[{name:'Central Park · Bethesda Terrace',type:'散步景點',dayIds:['1025'],nearStop:'Central Park',why:'湖畔、階梯與速寫',address:'Bethesda Terrace, Central Park, New York',openingHours:'戶外區域依現場公告',verified:false},{name:'Brooklyn Bridge',type:'散步景點',dayIds:['1030'],nearStop:'DUMBO',why:'步行過橋與城市天際線',address:'Brooklyn Bridge Pedestrian Entrance, Centre St and Park Row, New York',verified:false},{name:'High Line',type:'散步景點',dayIds:['1027'],nearStop:'Meatpacking',why:'高架公園與街景',address:'High Line, Gansevoort St, New York',verified:false},{name:'Washington Square Park',type:'散步景點',dayIds:['1029'],nearStop:'Greenwich Village',why:'拱門與街頭生活',address:'Washington Square Park, New York',verified:false},{name:'Roosevelt Island 河岸',type:'散步景點',dayIds:['1031'],nearStop:'Roosevelt Island',why:'河岸步道與曼哈頓視野',address:'Roosevelt Island, New York',verified:false}];
