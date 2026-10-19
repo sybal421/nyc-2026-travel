@@ -3,13 +3,13 @@ import {days} from './tripData';
 /** Coordinates follow the unscaled 1024 × 1536 crop of the supplied watercolor illustration. */
 type Area = {id:string;shape:string;days:string[]};
 const areas:Area[]=[
-  {id:'upper-west-side',shape:'M170 160 L340 178 360 492 212 462Z',days:['1025']},
+  {id:'upper-west-side',shape:'M170 160 L340 178 360 492 212 462Z',days:['1025','1029']},
   {id:'central-park',shape:'M340 170 L468 194 477 515 359 507Z',days:['1025']},
   {id:'upper-east-side',shape:'M462 205 L635 235 652 490 480 508Z',days:['1025','1029']},
   {id:'roosevelt-island',shape:'M830 153 Q909 154 914 232 L862 520 Q804 510 795 434Z',days:['1026']},
-  {id:'midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1026']},
+  {id:'midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1026','1029']},
   {id:'chelsea',shape:'M205 628 L455 687 453 866 220 825Z',days:['1024','1027']},
-  {id:'flatiron',shape:'M457 685 L635 688 647 780 462 787Z',days:['1029']},
+  {id:'flatiron',shape:'M457 685 L635 688 647 780 462 787Z',days:['1026']},
   {id:'west-village',shape:'M205 834 L456 880 453 1031 225 1026Z',days:['1028','1031']},
   {id:'soho',shape:'M224 1026 L454 1037 453 1123 230 1134Z',days:['1028']},
   {id:'east-village',shape:'M456 890 L739 883 765 1042 463 1038Z',days:['1031']},
