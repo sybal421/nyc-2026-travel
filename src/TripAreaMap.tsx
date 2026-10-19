@@ -32,7 +32,8 @@ const dateLabel=(id:string)=>days.find(d=>d.id===id)?.date.slice(5).replace('-',
 export default function TripAreaMap({selectedDay}:{selectedDay:string;onSelectDay:(id:string)=>void}){
   const all=selectedDay==='all';
   const travel=selectedDay==='1101'||selectedDay==='1102';
-  const activeShapes=areas.filter(a=>a.days.includes(selectedDay)).map(a=>a.shape);
+  const oct29Focus='M314 139 L535 164 Q624 177 652 229 Q672 268 684 474 L496 539 L590 746 L392 748 L367 610 L335 482 L314 352 Z';
+  const activeShapes=selectedDay==='1029'?[oct29Focus]:areas.filter(a=>a.days.includes(selectedDay)).map(a=>a.shape);
   return <figure className="illustrated-map watercolor-map">
     <div className="watercolor-map-art" role="img" aria-label={all?'原始水彩曼哈頓插畫，顯示全部街區':travel?'原始水彩曼哈頓插畫，交通日不顯示觀光區域':`${dateLabel(selectedDay)} 主要活動街區以完整水彩色彩顯示，其餘區域柔和淡化`}>
       <img className="watercolor-map-image" src="/nyc-watercolor-map-v2.webp" alt="" draggable={false}/>
