@@ -85,7 +85,6 @@ export const recommendations:Recommendation[]=[
 ["Spooksvilla + Friends","商店",["1031"],"East Village","插畫、奇趣禮品；當天正式行程",undefined,"309 East 9th Street, New York"],
 ["Exit9 Gift Emporium","商店",["1031"],"East Village","設計雜貨與小禮品，和其他商店同區",undefined,"51 Avenue A, New York"],
 ["L Train Vintage","商店",["1031"],"East Village","古著店，正式行程可順路逛",undefined,"204 First Avenue, New York"],
-,
 ["MoMA Design Store SoHo","商店",["1028"],"SoHo","設計生活用品與創意小物；不必只在 MoMA 館內逛",undefined,"81 Spring Street, New York"],
 ["Goods for the Study Nolita","商店",["1028"],"Nolita","兩間相鄰店面，筆具與紙品分開；設計文具優先推薦",undefined,"234 Mulberry Street, New York"],
 ["L Train Vintage","商店",["1031"],"East Village","平價二手服飾，慢慢挖寶挑質感款式",undefined,"204 First Avenue, New York"],
