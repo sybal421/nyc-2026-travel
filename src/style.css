@@ -190,3 +190,22 @@ body{background:#f2ebdf}
 .expense-table-scroll{overflow-x:auto}.merged-expense-table{width:100%;border-collapse:collapse;font-size:13px}.merged-expense-table th,.merged-expense-table td{padding:11px 7px;border-bottom:1px solid #e8e5dd;text-align:left}.merged-expense-table th{font-size:12px;color:#61746a}.merged-expense-table td small{display:block;color:#89928b;font-size:11px}.merged-expense-table td button{border:0;background:none;color:#6b8978;font-size:18px;cursor:pointer}.merged-expense-table .expense-money{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.expense-kind{font-size:11px;color:#96774c;white-space:nowrap}.expense-kind.actual{color:#397660;font-weight:700}.merged-expense-table tfoot th{font-weight:700;border-top:2px solid #a8b5a7}
 
 .expense-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0}.expense-controls input,.expense-controls select{min-width:0;width:100%;border:1px solid #ddd9cd;border-radius:9px;background:#fffdfa;padding:10px;color:#405c51;font:inherit;font-size:12px}.expense-controls input{grid-column:1/-1}.merged-expense-table{min-width:650px}@media(min-width:750px){.expense-controls{grid-template-columns:2fr repeat(3,1fr)}.expense-controls input{grid-column:auto}}
+
+/* Mobile-first flight and lodging information */
+.flight-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+.flight-grid>*{min-width:0}
+.flight-card{min-width:0;margin:0;padding:16px;border-radius:17px;overflow-wrap:anywhere}
+.flight-card>.flight-title{margin-bottom:8px}
+.flight-card>.flight-title strong{font-size:16px}
+.flight-card>p{margin:7px 0 10px}
+.flight-itinerary{display:grid;gap:0;margin:12px 0}
+.flight-segment{padding:12px 0;border-top:1px solid #e6e0d7;display:grid;gap:5px}
+.flight-segment-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.flight-number{background:var(--butter);border:1.5px solid var(--ink);border-radius:20px;padding:3px 9px;font-size:13px;font-weight:800;white-space:nowrap}
+.flight-aircraft{font-size:11px;color:#77736d}
+.flight-route{font-size:15px!important;line-height:1.45;overflow-wrap:normal;word-break:keep-all}
+.flight-time{font-size:12px;color:#635f59}
+.flight-transfer{margin:0 0 0 9px;padding:7px 10px;border-left:2px solid #9ebaa5;background:#eef5e9;border-radius:0 8px 8px 0;font-size:12px;color:#466554}
+.flight-summary{margin-top:10px!important;padding-top:9px;border-top:1px solid #e6e0d7}
+.hotel-facts{min-width:0}
+@media(min-width:720px){.flight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
