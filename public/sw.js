@@ -1,4 +1,4 @@
-const CACHE='nyc-travel-v4';
+const CACHE='nyc-travel-v5';
 const SHELL=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL.map(p=>new URL(p,self.registration.scope).href))));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('nyc-travel-')&&k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
