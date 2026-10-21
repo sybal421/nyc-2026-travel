@@ -6,14 +6,14 @@ const areas:Area[]=[
   {id:'upper-west-side',shape:'M170 160 L340 178 360 492 212 462Z',days:['1025']},
   {id:'central-park',shape:'M340 170 L468 194 477 515 359 507Z',days:['1025','1030']},
   {id:'upper-east-side',shape:'M462 205 L635 235 652 490 480 508Z',days:['1025','1030']},
-  {id:'roosevelt-island',shape:'M830 153 Q909 154 914 232 L862 520 Q804 510 795 434Z',days:['1026']},
+  {id:'roosevelt-island',shape:'M830 153 Q909 154 914 232 L862 520 Q804 510 795 434Z',days:[]},
   {id:'midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1028','1029']},
   {id:'chelsea',shape:'M205 628 L455 687 453 866 220 825Z',days:['1024','1027']},
   {id:'flatiron',shape:'M457 685 L635 688 647 780 462 787Z',days:['1026']},
   {id:'west-village',shape:'M205 834 L456 880 453 1031 225 1026Z',days:['1028','1031']},
-  {id:'soho',shape:'M224 1026 L454 1037 453 1123 230 1134Z',days:['1026','1028']},
+  {id:'soho',shape:'M224 1026 L454 1037 453 1123 230 1134Z',days:['1026','1028','1031']},
   {id:'east-village',shape:'M456 890 L739 883 765 1042 463 1038Z',days:['1031']},
-  {id:'financial-district',shape:'M316 1261 L560 1242 623 1405 526 1471 344 1412Z',days:['1027']},
+  {id:'financial-district',shape:'M316 1261 L560 1242 623 1405 526 1471 344 1412Z',days:['1026','1027']},
   {id:'battery-park',shape:'M279 1214 L336 1212 346 1406 300 1378Z',days:['1028']},
   {id:'brooklyn-bridge',shape:'M624 1164 L850 1155 1024 1257 1024 1330 833 1279 642 1262Z',days:['1029']},
   {id:'dumbo',shape:'M848 1253 L1024 1225 1024 1362 840 1358Z',days:['1029']},
@@ -21,12 +21,12 @@ const areas:Area[]=[
 ];
 const extra:Record<string,string[]>={
   '1025':['Cooper Hewitt · Upper East Side'],
-  '1026':['Flatiron · SoHo · Nolita','Roosevelt Island Tram（若當天仍保留）'],
+  '1026':['Flatiron · SoHo','Whitehall Terminal · 免費 Staten Island Ferry 往返 St. George'],
   '1027':['Meatpacking · High Line · Little Island'],
   '1028':['Rector Park East · Battery Park City','MoMA · Midtown · Jazz Walk-in'],
   '1029':['Brooklyn Bridge · DUMBO · Brooklyn Heights Promenade','NYC Ferry：DUMBO → South Williamsburg','Peter Luger（16:00 待訂位）· Broadway · Aladdin · Times Square'],
   '1030':['Central Park · The Met · Upper East Side','Morgan Library（可選）'],
-  '1031':['Little Ukraine · East Village','Greenwich Village · 萬聖節遊行'],
+  '1031':['Little Ukraine · East Village · Nolita','Greenwich Village · 萬聖節遊行'],
 };
 const dateLabel=(id:string)=>days.find(d=>d.id===id)?.date.slice(5).replace('-','/')||'';
 export default function TripAreaMap({selectedDay}:{selectedDay:string;onSelectDay:(id:string)=>void}){
