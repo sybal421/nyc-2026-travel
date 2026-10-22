@@ -1,4 +1,5 @@
-export const publishedCustomTasks = [
+type PublicTask = {id:string;due:string;group:'行前準備'|'行李清單'|'旅途中';title:string};
+export const publishedCustomTasks: PublicTask[] = [
   {
     "id": "custom-mvgayvpr-6vm3u",
     "due": "10/23",
@@ -54,7 +55,7 @@ export const publishedCustomTasks = [
     "title": "口罩"
   }
 ];
-export const publishedTaskEdits = {
+export const publishedTaskEdits: Record<string,{due:string;group:'行前準備'|'行李清單'|'旅途中';title:string}> = {
   "car": {
     "due": "10/28",
     "group": "旅途中",
