@@ -7,7 +7,7 @@ export type Task={id:string;group:string;title:string;due?:string;priority?:'hig
 const s=(time:string,title:string,location?:string,transport?:string,detail?:string,status:Status='planned',conditional?:string):Stop=>({time,title,location,transport,detail,status,conditional});
 export const days:Day[]=[
 {id:'1024',date:'2026-10-24',weekday:'六',title:'長榮 BR26・西雅圖轉機',area:'桃園 TPE → 西雅圖 SEA',intro:'本日時間軸統一使用「紐約 EDT」排序，卡片內明確標出各機場當地時間。10/24 台灣 23:40 桃園起飛，10/24 西雅圖 19:20 抵達；轉機 2 小時 55 分，不安排機場觀光。西雅圖 22:15 起飛換算成紐約時間已是 10/25 01:15，因此放在隔日行程卡。',stops:[
-s('11:40 EDT','BR26｜桃園機場 TPE 起飛','Taiwan Taoyuan International Airport, Taoyuan, Taiwan',undefined,'【桃園當地時間：10/24（六）23:40，台灣 UTC+8】長榮 EVA Air BR26，飛往西雅圖 SEA；機場航廈依登機證確認。此卡 11:40 是同一時刻的紐約 EDT。','confirmed'),
+s('11:40 EDT','BR26｜桃園機場 TPE 起飛','Taiwan Taoyuan International Airport, Taoyuan, Taiwan',undefined,'【桃園當地時間：10/24（六）23:40，台灣 UTC+8】長榮 EVA Air BR26，飛往西雅圖 SEA；桃園出發航廈：第二航廈（T2；依訂位截圖確認）。此卡 11:40 是同一時刻的紐約 EDT。','confirmed'),
 s('22:20 EDT','BR26｜抵達西雅圖 SEA','Seattle-Tacoma International Airport, SeaTac, WA',undefined,'【西雅圖當地時間：10/24（六）19:20，PDT】西雅圖塔科馬國際機場 SEA。下機後優先辦理美國入境、行李及轉機。此卡 22:20 是紐約 EDT。','confirmed'),
 s('22:20–23:59 EDT（預估）','SEA｜入境、領行李、確認 JetBlue 轉機','Seattle-Tacoma International Airport, SeaTac, WA',undefined,'【西雅圖當地約 19:20–20:59】依現場動線辦理 CBP、行李提領及重託，並準備 TSA 安檢。若行李未能直掛 JFK，須確認 JetBlue 櫃檯收件截止時間。轉機時間短，取消原機場觀景台與購物行程。','verify')
 ]},
@@ -52,7 +52,7 @@ export const tickets:Ticket[]=[
 ];
 export const hpOptions=[{id:'none',label:'尚未抽中／維持原行程'},{id:'HP_1027',label:'10/27 19:00 · 1 人'},{id:'HP_1028_1300',label:'10/28 13:00 · 2 人'},{id:'HP_1028_1900',label:'10/28 19:00 · 2 人'},{id:'HP_1030_1900',label:'10/30 19:00 · 2 人'},{id:'HP_1101_1500',label:'11/01 15:00 · 2 人'}];
 export const tasks:Task[]=[
-["flight","行前準備","核對 10/24 去程 DL0068 15:45 TPE→11:11 SEA、DL1065 16:00 SEA→10/25 00:21 JFK；SEA 轉機 4 小時 49 分、入境／行李轉運及 11/01 回程、托運與手提額度","10/22"],
+["flight","行前準備","核對 10/24 BR026：TPE 第二航廈（T2）23:40 起飛、SEA 19:20 抵達；JetBlue B6264：SEA 22:15 起飛、10/25 JFK 06:35 抵達。SEA 轉機 2 小時 55 分，確認入境／行李轉運及 11/01 回程、托運與手提額度","10/22"],
 ["esta","行前準備","確認護照效期、ESTA 核准狀態與資料一致","10/21","https://esta.cbp.dhs.gov/"],
 ["hotel","行前準備","緊急確認 Interfaith 10/25 凌晨約 02:00–03:00 入住／門禁／自助入住方式；確認 10/24–27 與 Mint House 10/27–11/01 訂單；尤其 10/27 退房後寄放行李、領取時段及凌晨退房方式","10/22"],
 ["car","行前準備","核對 11/01 03:00 已預約機場接送（ZZH697730）：70 Pine 上車點、司機聯絡方式、JFK T4 與夏令時間切換","10/28"],
