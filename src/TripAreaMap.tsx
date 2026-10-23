@@ -48,7 +48,7 @@ export default function TripAreaMap({selectedDay}:{selectedDay:string;onSelectDa
         </defs>
         <rect width="1024" height="1536" fill="#fffaf0" opacity={all?0:travel?.45:.59} mask="url(#watercolor-day-mask)" className="watercolor-map-dim"/>
 
-        <g className="watercolor-map-click-targets">{areas.filter(a=>a.days.length).map(a=><path key={a.id} d={a.shape} fill="transparent" stroke="transparent" strokeWidth="2" style={{cursor:'pointer',pointerEvents:'all'}} role="button" tabIndex={0} aria-label={`${a.id.replaceAll('-',' ')}：${a.days.map(dateLabel).join('、')}`} onClick={()=>onSelectDay(a.days.includes(selectedDay)?(a.days[(a.days.indexOf(selectedDay)+1)%a.days.length]):a.days[0])} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();onSelectDay(a.days[0])}}}/>)}</g>
+        <g className="watercolor-map-click-targets">{areas.filter(a=>a.days.length).map(a=><path key={a.id} d={a.shape} fill="transparent" stroke="transparent" strokeWidth="2" style={{cursor:'pointer',pointerEvents:'all'}} role="button" tabIndex={0} aria-label={`${a.id.replace(/-/g,' ')}：${a.days.map(dateLabel).join('、')}`} onClick={()=>onSelectDay(a.days.includes(selectedDay)?(a.days[(a.days.indexOf(selectedDay)+1)%a.days.length]):a.days[0])} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();onSelectDay(a.days[0])}}}/>)}</g>
       </svg>
     </div>
     <figcaption className="illustrated-map-caption">
