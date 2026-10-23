@@ -29,7 +29,7 @@ const extra:Record<string,string[]>={
   '1031':['Little Ukraine · East Village · Nolita','Greenwich Village · 萬聖節遊行'],
 };
 const dateLabel=(id:string)=>days.find(d=>d.id===id)?.date.slice(5).replace('-','/')||'';
-export default function TripAreaMap({selectedDay}:{selectedDay:string;onSelectDay:(id:string)=>void}){
+export default function TripAreaMap({selectedDay,onSelectDay}:{selectedDay:string;onSelectDay:(id:string)=>void}){
   const all=selectedDay==='all';
   const travel=false;
   const activeShapes=areas.filter(a=>a.days.includes(selectedDay)).map(a=>a.shape);
