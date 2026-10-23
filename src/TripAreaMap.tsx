@@ -7,11 +7,11 @@ const areas:Area[]=[
   {id:'central-park',shape:'M340 170 L468 194 477 515 359 507Z',days:['1025','1030']},
   {id:'upper-east-side',shape:'M462 205 L635 235 652 490 480 508Z',days:['1025','1030']},
   {id:'roosevelt-island',shape:'M830 153 Q909 154 914 232 L862 520 Q804 510 795 434Z',days:[]},
-  {id:'midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1028','1029']},
-  {id:'chelsea',shape:'M205 628 L455 687 453 866 220 825Z',days:['1024','1027']},
+  {id:'midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1028','1029','1030']},
+  {id:'chelsea',shape:'M205 628 L455 687 453 866 220 825Z',days:['1027']},
   {id:'flatiron',shape:'M457 685 L635 688 647 780 462 787Z',days:['1026']},
   {id:'west-village',shape:'M205 834 L456 880 453 1031 225 1026Z',days:['1028','1031']},
-  {id:'soho',shape:'M224 1026 L454 1037 453 1123 230 1134Z',days:['1026','1028','1031']},
+  {id:'soho',shape:'M224 1026 L454 1037 453 1123 230 1134Z',days:['1026','1031']},
   {id:'east-village',shape:'M456 890 L739 883 765 1042 463 1038Z',days:['1031']},
   {id:'financial-district',shape:'M316 1261 L560 1242 623 1405 526 1471 344 1412Z',days:['1026','1027']},
   {id:'battery-park',shape:'M279 1214 L336 1212 346 1406 300 1378Z',days:['1028']},
@@ -31,8 +31,9 @@ const extra:Record<string,string[]>={
 const dateLabel=(id:string)=>days.find(d=>d.id===id)?.date.slice(5).replace('-','/')||'';
 export default function TripAreaMap({selectedDay}:{selectedDay:string;onSelectDay:(id:string)=>void}){
   const all=selectedDay==='all';
-  const travel=selectedDay==='1101'||selectedDay==='1102';
+  const travel=false;
   const activeShapes=areas.filter(a=>a.days.includes(selectedDay)).map(a=>a.shape);
+  
   return <figure className="illustrated-map watercolor-map">
     <div className="watercolor-map-art" role="img" aria-label={all?'原始水彩曼哈頓插畫，顯示全部街區':travel?'原始水彩曼哈頓插畫，交通日不顯示觀光區域':`${dateLabel(selectedDay)} 主要活動街區以完整水彩色彩顯示，其餘區域柔和淡化`}>
       <img className="watercolor-map-image" src="/nyc-watercolor-map-v2.webp" alt="" draggable={false}/>
@@ -47,11 +48,12 @@ export default function TripAreaMap({selectedDay}:{selectedDay:string;onSelectDa
         </defs>
         <rect width="1024" height="1536" fill="#fffaf0" opacity={all?0:travel?.45:.59} mask="url(#watercolor-day-mask)" className="watercolor-map-dim"/>
 
+        <g className="watercolor-map-click-targets">{areas.filter(a=>a.days.length).map(a=><path key={a.id} d={a.shape} fill="transparent" stroke="transparent" strokeWidth="2" style={{cursor:'pointer',pointerEvents:'all'}} role="button" tabIndex={0} aria-label={`${a.id.replaceAll('-',' ')}：${a.days.map(dateLabel).join('、')}`} onClick={()=>onSelectDay(a.days.includes(selectedDay)?(a.days[(a.days.indexOf(selectedDay)+1)%a.days.length]):a.days[0])} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();onSelectDay(a.days[0])}}}/>)}</g>
       </svg>
     </div>
     <figcaption className="illustrated-map-caption">
-      <strong>{all?'我們的紐約旅行 · 水彩街區地圖':selectedDay==='1102'?'11/02 · 抵達台灣':selectedDay==='1101'?'11/01 · JFK 清晨返程':`${dateLabel(selectedDay)} · ${days.find(d=>d.id===selectedDay)?.title||''}`}</strong>
-      <span>{all?'選擇上方日期，當日活動區域會保留鮮明的水彩色彩。':travel?'交通日 · 不標示曼哈頓觀光區域':'當日活動街區保留原始色彩，其餘區域柔和淡化。示意圖非導航地圖。'}</span>
+      <strong>{all?'我們的紐約旅行 · 水彩街區地圖':`${dateLabel(selectedDay)} · ${days.find(d=>d.id===selectedDay)?.title||''}`}</strong>
+      <span>{all?'選擇日期或點擊地圖街區，切換對應的旅遊日；同一街區可再次點擊切換其他日期。':travel?'交通日 · 不標示曼哈頓觀光區域':'當日活動街區保留原始色彩，其餘區域柔和淡化。示意圖非導航地圖。'}</span>
       {!!extra[selectedDay]?.length&&<div className="watercolor-map-tags">{extra[selectedDay].map(v=><span key={v}>{v}</span>)}</div>}
     </figcaption>
   </figure>;
