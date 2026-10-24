@@ -13,7 +13,7 @@ const transitLegs:Record<string,{out?:TravelLeg;back?:TravelLeg}>={
 '1024':{},
 '1025':{},
 '1026':{},
-'1027':{back:{time:'21:00–21:45（預估）',title:'觀星結束 → 70 Pine Street 住宿',transport:'若參加 High Line 觀星：步行至 14 St／8 Av 地鐵站 → 搭 Downtown 方向 A／C 線至 Fulton St → 步行回 70 Pine St；若抽中 Harry Potter：從 Lyric Theatre 附近 42 St–Port Authority Bus Terminal 搭 Downtown 方向 A／C 線至 Fulton St → 步行回住宿',detail:'觀星於 High Line 的 Little W 12th St × Washington St，官方時段隨日落與閉園時間調整；若抽中 Harry Potter 晚場，返程時間改為劇院散場後。'}},
+'1027':{},
 '1028':{},
 '1029':{},
 '1030':{},
