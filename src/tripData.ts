@@ -110,35 +110,35 @@ export const tasks:Task[]=[
 ["paradeday","旅途中","10/31 確認 Village Halloween Parade 起訖、6th Ave 觀賞位置、封路與返程地鐵","10/31"],
 ["airport","旅途中","11/01 02:15–02:45 整理退房；03:00 從 70 Pine 搭已預約接送，07:10 搭 DL0699 由 JFK T4 出發","11/01"]].map((a:any)=>({id:a[0],group:a[1],title:a[2],due:a[3],url:a[4],priority:['flight','esta','hotel','car','screens'].includes(a[0])?'high':'normal'}));
 export const recommendations:Recommendation[]=[
-["Broadway 72nd St bagel / deli","餐飲",["1025"],"Upper West Side","中央公園散步前外帶早餐或輕食","6–16","Broadway and West 72nd Street, New York"],
-["Cooper Hewitt Museum Shop","商店",["1025"],"Cooper Hewitt","館內設計禮品與選書，不必另跑街區",undefined,"2 East 91st Street, New York"],
-["Kinokuniya New York","商店",["1026"],"Bryant Park／NYPL","插畫書、設計書與文具；在 Bryant Park 附近",undefined,"1073 Avenue of the Americas, New York"],
-["MoMA Design Store","商店",["1026"],"MoMA","參觀完直接逛設計商店，不需跨區",undefined,"11 West 53rd Street, New York"],
-["Printed Matter Chelsea","商店",["1027"],"Chelsea","原本正式行程的藝術印刷品店，11:00 開始逛",undefined,"231 11th Avenue, New York"],
-["SoHo / Nolita 文具店 Goods for the Study","商店",["1026"],"SoHo / Nolita","喜歡紙品與設計文具；按當日步行方向決定是否繞往 Nolita",undefined,"Nolita, Manhattan, New York"],
+
+
+["Kinokuniya New York","商店",["1026"],"Bryant Park／NYPL","日文書、插畫書與地下樓文具區",undefined,"1073 Avenue of the Americas, New York"],
+
+
+
 ["Housing Works Bookstore","商店",["1026"],"SoHo","二手書、書店空間，與 SoHo 散步相容",undefined,"126 Crosby Street, New York"],
 ["McNally Jackson SoHo","商店",["1026"],"SoHo","設計書與獨立選書；先確認分店地址與營業",undefined,"134 Prince Street, New York"],
-["The Met Museum Shop","商店",["1030"],"The Met","雕塑速寫之後逛藝術書、明信片與文創",undefined,"1000 Fifth Avenue, New York"],
+
 ["Powerhouse Arena","商店",["1029"],"DUMBO","藝術設計、攝影書；在 DUMBO 散步路線上",undefined,"28 Adams Street, Brooklyn, New York"],
 ["Time Out Market New York","餐飲",["1029"],"DUMBO","橋下河岸午餐，價格偏高可只逛不吃","15–28","55 Water Street, Brooklyn, New York"],
-["Spooksvilla + Friends","商店",["1031"],"East Village","插畫、奇趣禮品；當天正式行程",undefined,"309 East 9th Street, New York"],
+
 ["Exit9 Gift Emporium","商店",["1031"],"East Village","設計雜貨與小禮品，和其他商店同區",undefined,"51 Avenue A, New York"],
 ["L Train Vintage","商店",["1031"],"East Village","古著店，正式行程可順路逛",undefined,"204 First Avenue, New York"],
 ["MoMA Design Store SoHo","商店",["1026"],"SoHo","設計生活用品與創意小物；不必只在 MoMA 館內逛",undefined,"81 Spring Street, New York"],
-["Goods for the Study Nolita","商店",["1028"],"Nolita","兩間相鄰店面，筆具與紙品分開；設計文具優先推薦",undefined,"234 Mulberry Street, New York"],
-["L Train Vintage","商店",["1031"],"East Village","平價二手服飾，慢慢挖寶挑質感款式",undefined,"204 First Avenue, New York"],
+["Goods for the Study Nolita","商店",["1026"],"Nolita","兩間相鄰店面，筆具與紙品分開；設計文具優先推薦",undefined,"234 Mulberry Street, New York"],
+
 ["AuH2O","商店",["1031"],"East Village","二手與改造服飾、飾品；偏平價質感穿搭",undefined,"84 East 7th Street, New York"],
 ["Niconeco Zakkaya","商店",["1031"],"East Village","日系設計文具、手帳紙品與精緻小物；高優先",undefined,"263 East 10th Street, New York"],
 ["Archie's Press","商店",["1031"],"East Village","活版印刷城市地圖、海報與卡片；高優先",undefined,"219 East 10th Street, New York"],
 ["Casey Rubber Stamps","商店",["1031"],"East Village","特色手工橡皮章與印刷工具；路過值得進去",undefined,"322 East 11th Street, New York"],
 ["Pageant Print Shop","商店",["1031"],"East Village","老地圖、復古海報與版畫，適合挖寶",undefined,"69 East 4th Street, New York"],
 ["Pink Olive","商店",["1031"],"East Village","創意禮品、卡片、文具與生活小物",undefined,"439 East 9th Street, New York"],
-["MoMA Design Store 53rd St","商店",["1026"],"MoMA","展後順逛設計商品與文具，免另排購物時段",undefined,"44 West 53rd Street, New York"]
+
 ,
 ["Gray's Papaya",'餐飲',["1025"],"Upper West Side · W 72nd St","紐約經典熱狗與木瓜飲；早餐或散步前小吃","5–12","2090 Broadway, New York"],
 ["Los Tacos No. 1 · Madison Square Park",'餐飲',["1026"],"Flatiron","現做墨西哥塔可，上午 Flatiron 路線可外帶","5–15","27 East 23rd Street, New York"],
 ["Los Tacos No. 1 · Chelsea Market",'餐飲',["1027"],"Chelsea Market","必吃塔可；與 Chelsea Market 正式行程完全同路","5–15","75 Ninth Avenue, New York"],
-["Xi'an Famous Foods · Financial District",'餐飲',["1027"],"70 Pine 附近","換住宿後可選平價手工麵；多款帶辣，點餐先確認不辣選項","10–17","8 Liberty Place, New York"],
+
 ["Champion Pizza · SoHo",'餐飲',["1026"],"SoHo / Nolita","平價紐約披薩切片，逛文具店途中快吃","4–10","17 Cleveland Place, New York"],
 ["Los Tacos No. 1 · Times Square",'餐飲',["1029"],"New Amsterdam Theatre","Aladdin 開演前快速吃塔可，步行距離短","5–15","229 West 43rd Street, New York"],
 ["7th Street Burger · DUMBO",'餐飲',["1029"],"DUMBO / Brooklyn Bridge Park","Smash burger 與薯條，河岸散步可順路外帶","9–18","17 Old Fulton Street, Brooklyn, New York"],
@@ -147,11 +147,16 @@ export const recommendations:Recommendation[]=[
 ["7th Street Burger · East Village",'餐飲',["1031"],"East Village","平價現做漢堡，逛店途中快速吃","9–18","91 East 7th Street, New York"],
 ["$1.50 Fresh Pizza · East Village",'餐飲',["1031"],"East Village","超平價披薩切片；小吃備案，不用特地繞路","2–8","71 Second Avenue, New York"]
 ,
-["NY Pizza Suprema","餐飲",["1024"],"Penn Station 西南側","抵達 Penn Station 後可買紐約經典披薩切片；帶行李不必久坐","6–15","413 Eighth Avenue, New York"],
-["Best Bagel & Coffee","餐飲",["1025"],"Penn Station / 35th St","貝果三明治與咖啡，10/24 深夜抵達多半已打烊，僅列次日備案","8–18","225 West 35th Street, New York"],
-["Woorijip","餐飲",["1025"],"Koreatown / W 32nd St","韓式熟食與飯盒；想吃米飯可選，但從 8th Ave 需稍微向東繞","10–18","12 West 32nd Street, New York"],
-["Whole Foods Market · Chelsea","餐飲",["1024"],"Chelsea / 7th Ave","10/24 深夜可能打烊；以便利商店或車站仍營業店家為備案","8–20","250 Seventh Avenue, New York"]
-].map((a:any)=>({name:a[0],type:a[1],dayIds:a[2],nearStop:a[3],why:a[4],estimatedBudgetUSD:a[5],address:a[6],openingHours:'待查證',verified:false}));
+
+
+
+
+].map((a:any)=>{const details:Record<string,{hours:string;rating?:number}>={
+'Kinokuniya New York':{hours:'週一至六 10:00–20:00；週日 11:00–19:30',rating:4.7},
+'Housing Works Bookstore':{hours:'週一至六 11:00–19:00；週日 11:00–17:00',rating:4.6},
+'McNally Jackson SoHo':{hours:'每日 10:00–21:00',rating:4.7},
+'MoMA Design Store SoHo':{hours:'週一至六 10:00–19:00；週日 11:00–19:00'},
+};const d=details[a[0]];return {name:a[0],type:a[1],dayIds:a[2],nearStop:a[3],why:a[4],estimatedBudgetUSD:a[5],address:a[6],openingHours:d?.hours||'待查證',googleRating:d?.rating,verified:!!d}});
 export const backupActivities: {day:string;title:string;time:string;address:string;note:string}[]=[{day:'10/26',title:'West Thames Park Pickleball',time:'10:00–13:00',address:'West Thames Park, New York, NY',note:'10:00–13:00，與 Midtown 主線衝突'},{day:'10/28',title:'Landscape Art Class',time:'14:00–16:00',address:'Robert F. Wagner Jr. Park, 20 Battery Pl, New York, NY',note:'14:00–16:00，Wagner Park，取代 Bushwick'},{day:'10/30',title:'Gotham Park K-Pop Dance',time:'18:00–19:00',address:'Gotham Park, Manhattan, New York',note:'18:00–19:00，建議註冊；僅取消 Morgan 時可參加'},{day:'11/01',title:'Fulton St A 線 → Howard Beach → AirTrain',time:'凌晨（依航班回推）',address:'Fulton St Station, New York, NY',note:'凌晨約 90–110 分或更久，前一晚核對施工與班次；異動改叫車'}];
 export const walkRecommendations:Recommendation[]=[{name:'Central Park · Bethesda Terrace',type:'散步景點',dayIds:['1025'],nearStop:'Central Park',why:'湖畔、階梯與速寫',address:'Bethesda Terrace, Central Park, New York',openingHours:'戶外區域依現場公告',verified:false},{name:'Brooklyn Bridge',type:'散步景點',dayIds:['1029'],nearStop:'DUMBO',why:'步行過橋與城市天際線',address:'Brooklyn Bridge Pedestrian Entrance, Centre St and Park Row, New York',verified:false},{name:'High Line',type:'散步景點',dayIds:['1027'],nearStop:'Meatpacking',why:'高架公園與街景',address:'High Line, Gansevoort St, New York',verified:false},{name:'Washington Square Park',type:'散步景點',dayIds:['1031'],nearStop:'Greenwich Village',why:'拱門與街頭生活',address:'Washington Square Park, New York',verified:false},{name:'Roosevelt Island 河岸',type:'散步景點',dayIds:['1026'],nearStop:'Roosevelt Island',why:'河岸步道與曼哈頓視野',address:'Roosevelt Island, New York',verified:false}];
 export const sourceLinks=[['MTA','https://new.mta.info/'],['JFK','https://www.jfkairport.com/'],['Downtown Connection','https://downtownny.com/about-us/services/downtown-connection-bus/']];
