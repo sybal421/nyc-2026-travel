@@ -1,7 +1,7 @@
 export type Status='confirmed'|'planned'|'pending'|'backup'|'verify';
 export type Stop={time:string;end?:string;title:string;location?:string;transport?:string;detail?:string;status?:Status;url?:string;conditional?:string};
 export type Day={id:string;date:string;weekday:string;title:string;area:string;intro:string;stops:Stop[];tips?:string[]};
-export type Recommendation={name:string;type:'餐飲'|'商店'|'散步景點';dayIds:string[];nearStop:string;why:string;estimatedBudgetUSD?:string;address?:string;openingHours?:string;googleRating?:number;googleMapsUrl?:string;sourceUrl?:string;verified:false};
+export type Recommendation={name:string;type:'餐飲'|'商店'|'散步景點';dayIds:string[];nearStop:string;why:string;estimatedBudgetUSD?:string;address?:string;openingHours?:string;googleRating?:number;referenceRating?:number;googleMapsUrl?:string;sourceUrl?:string;verified:boolean};
 export type Ticket={id:string;title:string;date:string;time:string;status:Status;url?:string;note:string;deadline?:string};
 export type Task={id:string;group:string;title:string;due?:string;priority?:'high'|'normal';url?:string};
 const s=(time:string,title:string,location?:string,transport?:string,detail?:string,status:Status='planned',conditional?:string):Stop=>({time,title,location,transport,detail,status,conditional});
