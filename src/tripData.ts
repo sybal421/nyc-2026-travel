@@ -129,7 +129,7 @@ export const recommendations:Recommendation[]=[
 
 ["AuH2O","商店",["1031"],"East Village","二手與改造服飾、飾品；偏平價質感穿搭",undefined,"84 East 7th Street, New York"],
 ["Niconeco Zakkaya","商店",["1031"],"East Village","日系設計文具、手帳紙品與精緻小物；高優先",undefined,"263 East 10th Street, New York"],
-["Archie's Press","商店",["1031"],"East Village","活版印刷城市地圖、海報與卡片；高優先",undefined,"219 East 10th Street, New York"],
+["Archie's Press","商店",["1031"],"East Village","活版印刷城市地圖、海報與卡片；高優先",undefined,"220 East 10th Street, New York"],
 ["Casey Rubber Stamps","商店",["1031"],"East Village","特色手工橡皮章與印刷工具；路過值得進去",undefined,"322 East 11th Street, New York"],
 ["Pageant Print Shop","商店",["1031"],"East Village","老地圖、復古海報與版畫，適合挖寶",undefined,"69 East 4th Street, New York"],
 ["Pink Olive","商店",["1031"],"East Village","創意禮品、卡片、文具與生活小物",undefined,"439 East 9th Street, New York"],
@@ -156,7 +156,18 @@ export const recommendations:Recommendation[]=[
 'Housing Works Bookstore':{hours:'週一至六 11:00–19:00；週日 11:00–17:00',rating:4.6},
 'McNally Jackson SoHo':{hours:'每日 10:00–21:00',rating:4.7},
 'MoMA Design Store SoHo':{hours:'週一至六 10:00–19:00；週日 11:00–19:00'},
-};const d=details[a[0]];return {name:a[0],type:a[1],dayIds:a[2],nearStop:a[3],why:a[4],estimatedBudgetUSD:a[5],address:a[6],openingHours:d?.hours||'待查證',googleRating:d?.rating,verified:!!d}});
+,
+'Powerhouse Arena':{hours:'週一至五 11:00–19:00；週末 10:00–19:00',rating:3.9},
+'Time Out Market New York':{hours:'週日至四 08:00–22:00；週五六 08:00–23:00',rating:4},
+'Exit9 Gift Emporium':{hours:'週一至四 11:00–19:00；週五六 10:00–19:00；週日 11:00–18:00',rating:3.8},
+'L Train Vintage':{hours:'週一至四、日 12:00–19:00；週五六 12:00–20:00',rating:4},
+'Goods for the Study Nolita':{hours:'每日 12:00–20:00',rating:4.2},
+'AuH2O':{hours:'週三至日 12:00–19:00；週一二休'},
+'Niconeco Zakkaya':{hours:'週一至五 12:00–19:00；週六 10:00–19:00；週日 10:00–18:00',rating:4.9},
+'Archie\'s Press':{hours:'週五至日 12:00–18:00（營業日可能變動）',rating:4.2},
+'Casey Rubber Stamps':{hours:'週一至六 13:00–20:00；週日 14:30–19:00',rating:4.5},
+'Pageant Print Shop':{hours:'週二至日 13:00–19:00；週一休（官方頁面資訊有出入）',rating:3.5},
+'Pink Olive':{hours:'週一至五 12:00–20:00；週六 11:00–19:00；週日 11:00–18:00',rating:4.4}};const d=details[a[0]];return {name:a[0],type:a[1],dayIds:a[2],nearStop:a[3],why:a[4],estimatedBudgetUSD:a[5],address:a[6],openingHours:d?.hours||'待查證',googleRating:undefined,referenceRating:d?.rating,verified:!!d}});
 export const backupActivities: {day:string;title:string;time:string;address:string;note:string}[]=[{day:'10/26',title:'West Thames Park Pickleball',time:'10:00–13:00',address:'West Thames Park, New York, NY',note:'10:00–13:00，與 Midtown 主線衝突'},{day:'10/28',title:'Landscape Art Class',time:'14:00–16:00',address:'Robert F. Wagner Jr. Park, 20 Battery Pl, New York, NY',note:'14:00–16:00，Wagner Park，取代 Bushwick'},{day:'10/30',title:'Gotham Park K-Pop Dance',time:'18:00–19:00',address:'Gotham Park, Manhattan, New York',note:'18:00–19:00，建議註冊；僅取消 Morgan 時可參加'},{day:'11/01',title:'Fulton St A 線 → Howard Beach → AirTrain',time:'凌晨（依航班回推）',address:'Fulton St Station, New York, NY',note:'凌晨約 90–110 分或更久，前一晚核對施工與班次；異動改叫車'}];
 export const walkRecommendations:Recommendation[]=[{name:'Central Park · Bethesda Terrace',type:'散步景點',dayIds:['1025'],nearStop:'Central Park',why:'湖畔、階梯與速寫',address:'Bethesda Terrace, Central Park, New York',openingHours:'戶外區域依現場公告',verified:false},{name:'Brooklyn Bridge',type:'散步景點',dayIds:['1029'],nearStop:'DUMBO',why:'步行過橋與城市天際線',address:'Brooklyn Bridge Pedestrian Entrance, Centre St and Park Row, New York',verified:false},{name:'High Line',type:'散步景點',dayIds:['1027'],nearStop:'Meatpacking',why:'高架公園與街景',address:'High Line, Gansevoort St, New York',verified:false},{name:'Washington Square Park',type:'散步景點',dayIds:['1031'],nearStop:'Greenwich Village',why:'拱門與街頭生活',address:'Washington Square Park, New York',verified:false},{name:'Roosevelt Island 河岸',type:'散步景點',dayIds:['1026'],nearStop:'Roosevelt Island',why:'河岸步道與曼哈頓視野',address:'Roosevelt Island, New York',verified:false}];
 export const sourceLinks=[['MTA','https://new.mta.info/'],['JFK','https://www.jfkairport.com/'],['Downtown Connection','https://downtownny.com/about-us/services/downtown-connection-bus/']];
