@@ -156,7 +156,6 @@ export const recommendations:Recommendation[]=[
 'Housing Works Bookstore':{hours:'週一至六 11:00–19:00；週日 11:00–17:00',rating:4.6},
 'McNally Jackson SoHo':{hours:'每日 10:00–21:00',rating:4.7},
 'MoMA Design Store SoHo':{hours:'週一至六 10:00–19:00；週日 11:00–19:00'},
-,
 'Powerhouse Arena':{hours:'週一至五 11:00–19:00；週末 10:00–19:00',rating:3.9},
 'Time Out Market New York':{hours:'週日至四 08:00–22:00；週五六 08:00–23:00',rating:4},
 'Exit9 Gift Emporium':{hours:'週一至四 11:00–19:00；週五六 10:00–19:00；週日 11:00–18:00',rating:3.8},
