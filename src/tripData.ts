@@ -11,19 +11,16 @@ s('11:40 EDT','BR26｜桃園機場 TPE 起飛','Taiwan Taoyuan International Air
 s('22:20 EDT','BR26｜抵達西雅圖 SEA','Seattle-Tacoma International Airport, SeaTac, WA',undefined,'西雅圖當地時間：10/24（六）19:20 PDT；下機後辦理 CBP 入境、領取行李並轉機。','confirmed'),
 s('22:20–23:59 EDT（預估）','SEA｜入境、領行李、確認 JetBlue 轉機','Seattle-Tacoma International Airport, SeaTac, WA',undefined,'西雅圖當地時間：約 19:20–22:15 PDT；轉機時間 2 小時 55 分；辦理 CBP 入境、取行李（若未直掛則重託）及 TSA 安檢；依 JetBlue 規定準時抵達登機門。','verify')
 ]},
-{id:'1025',date:'2026-10-25',weekday:'日',title:'JetBlue 抵達 JFK・中央公園與設計',area:'SEA → JFK · Chelsea · Upper West Side · Central Park · Upper East Side',intro:'清晨抵達 JFK；寄放行李後安排中央公園與 Cooper Hewitt。',stops:[
-s('00:00–01:15 EDT（預估）','SEA｜完成轉機安檢、前往 JetBlue 登機門','Seattle-Tacoma International Airport, SeaTac, WA',undefined,'西雅圖當地時間：10/24 21:00–22:15 PDT；完成重託與 TSA 安檢；確認 B6264 登機門及登機時間。','verify'),
-s('01:15 EDT','JetBlue B6264｜西雅圖 SEA 起飛','Seattle-Tacoma International Airport, SeaTac, WA',undefined,'西雅圖當地時間：10/24（六）22:15 PDT；JetBlue B6264 飛往 JFK；紐約當地起飛時間為 10/25 01:15 EDT。','confirmed'),
-s('06:35 EDT','JetBlue B6264｜抵達紐約 JFK','John F. Kennedy International Airport, Queens, NY',undefined,'紐約當地時間：10/25（日）06:35 EDT；抵達 JFK；航廈依 JetBlue 訂位資料或當日公告確認。','confirmed'),
-s('06:35–07:30 EDT（預估）','JFK｜下機、領取託運行李','John F. Kennedy International Airport, Queens, NY',undefined,'已在西雅圖完成美國入境；領取行李後前往 AirTrain。','planned'),
-s('07:30–09:00 EDT（預估）','JFK → Interfaith Retreats（Chelsea）','Interfaith Retreats, 370 8th Avenue, New York, NY','AirTrain → Jamaica → LIRR 至 Penn Station → 步行；或選擇官方計程車／合法叫車','路線：AirTrain → Jamaica → LIRR → Penn Station → 步行至住宿；LIRR 車票另購，班次查 TrainTime。','planned'),
-s('09:00–09:45 EDT（預估）','Interfaith Retreats｜寄放行李、早餐／休息','Interfaith Retreats, 370 8th Avenue, New York, NY',undefined,'行李寄放、提早入住與早餐使用方式依住宿規定確認。','verify'),
-s('09:45–10:20 EDT（彈性）','Chelsea → Upper West Side（地鐵）','Broadway and W 72nd St, New York, NY','Penn Station 一帶搭 Uptown 1 號線至 72 St，再步行','若航班、行李或交通延遲，可縮短或取消 UWS 散步。','planned'),
-s('10:20–11:30 EDT（彈性）','Upper West Side、Strawberry Fields 散步','Strawberry Fields, Central Park, New York, NY',undefined,'Verdi Square、The Dakota 外觀、Strawberry Fields；以體力為準。','planned'),
-s('11:30–12:30 EDT','中央公園午餐、休息','Central Park, New York, NY',undefined,'長途飛行後不要勉強趕景點。'),
-s('12:30–13:30 EDT','中央公園 → Cooper Hewitt','Cooper Hewitt Smithsonian Design Museum, 2 E 91st St, New York, NY',undefined,'前往 Upper East Side 東 91 街；視體力改搭車。'),
-s('13:30–16:00 EDT','Cooper Hewitt｜設計展與 Carnegie Mansion','Cooper Hewitt Smithsonian Design Museum, 2 E 91st St, New York, NY',undefined,'13:30 導覽待確認；可視疲勞程度縮短參觀。','pending'),
-s('16:00–17:00 EDT（預估）','Cooper Hewitt → Interfaith Retreats','Interfaith Retreats, 370 8th Avenue, New York, NY','地鐵或叫車返回 Chelsea','返回住宿休息，晚上不排遠距離行程。','planned')
+{id:'1025',date:'2026-10-25',weekday:'日',title:'百老匯雙劇日｜怪奇物語・哈利波特',area:'Chelsea · Theater District · Times Square',intro:'今天已購得 Stranger Things $40 Rush（Orchestra B7），13:00 午場；19:00 已購票 Harry Potter。中央公園寫生移至 10/30，Cooper Hewitt 暫列備案。',stops:[
+s('06:35','JetBlue B6264｜抵達 JFK','John F. Kennedy International Airport, Queens, NY',undefined,'抵達紐約；航班實際狀況依當日資訊。','confirmed'),
+s('上午','Interfaith Retreats｜行李與入住安排','Interfaith Retreats, 370 8th Avenue, New York, NY',undefined,'依住宿現場安排。','planned'),
+s('11:45–12:15','劇院區｜簡單午餐、洗手間','Marquis Theatre, 210 W 46th St, New York, NY',undefined,'不要走遠，預留入場時間。','planned'),
+s('12:15–12:30','Marquis Theatre｜入場','Marquis Theatre, 210 W 46th St, New York, NY',undefined,'持紙本票入場；票券註明遲到入座由劇院決定。','confirmed'),
+s('13:00–約15:45','Stranger Things: The First Shadow【已購票】','Marquis Theatre, 210 W 46th St, New York, NY',undefined,'Rush US$40；Orchestra Row B Seat 7；10/25（日）13:00。結束時間為預估。','confirmed'),
+s('16:00–17:45','晚餐、休息｜Theater District','Times Square, Manhattan, New York, NY',undefined,'兩場戲中間以吃飯、坐下休息為主。','planned'),
+s('18:20–18:40','Lyric Theatre｜入場','Lyric Theatre, 214 W 43rd St, New York, NY',undefined,'預留安檢及找座位時間。','confirmed'),
+s('19:00–約22:00','Harry Potter and the Cursed Child【已購票】','Lyric Theatre, 214 W 43rd St, New York, NY',undefined,'已購票 US$88；Balcony Row D Seat 14；視線受限座位；散場時間為預估。','confirmed'),
+s('22:00 後','返回 Interfaith Retreats 休息','Interfaith Retreats, 370 8th Avenue, New York, NY',undefined,'夜間注意周遭與隨身物品。','planned')
 ]},
 {id:'1026',date:'2026-10-26',weekday:'一',title:'Flatiron・SoHo・Staten Island Ferry',area:'Flatiron · SoHo · Lower Manhattan · Staten Island Ferry',intro:'Flatiron 與 SoHo 街區散步；傍晚搭免費 Staten Island Ferry 欣賞港灣與天際線。',stops:[s('08:30–09:30','Chelsea 住宿早餐','370 8th Avenue, New York, NY'),s('10:00–11:30','Flatiron Building、Madison Square Park','175 5th Ave, New York, NY',undefined,'建築、街區與公園散步'),s('11:30–12:30','Flatiron 附近午餐','Madison Square Park, New York, NY'),s('12:30–15:50','SoHo：鑄鐵建築、獨立書店與設計商店','Prince Street and Greene Street, New York, NY',undefined,'McNally Jackson、Housing Works；Greene 與 Mercer 街鑄鐵建築。'),s('15:50–16:35','前往 Whitehall Terminal','4 South Street, New York, NY','地鐵','SoHo 往南搭地鐵，預留步行與候船時間'),s('16:35–17:00','Whitehall Terminal 候船','4 South Street, New York, NY',undefined,'免費 Staten Island Ferry，無須購票；留意傍晚通勤人潮'),s('17:00–17:25','Staten Island Ferry：Whitehall → St. George','St. George Ferry Terminal, Staten Island, NY','渡輪','免費單程約 25 分鐘，港灣、自由女神像與曼哈頓天際線'),s('17:25–18:00','St. George Terminal 下船與等候回程','1 Bay Street, Staten Island, NY',undefined,'抵達後須下船，再依現場指示排隊搭返程'),s('18:00–18:25','Staten Island Ferry：St. George → Whitehall','4 South Street, New York, NY','渡輪','免費回程約 25 分鐘；以當日班表為準'),s('18:30–19:30','Lower Manhattan 晚餐或返回 Chelsea','Whitehall Street, New York, NY',undefined,'視體力彈性安排')]},
 {id:'1027',date:'2026-10-27',weekday:'二',title:'Chelsea・Morgan 古典圖書館・High Line 觀星',area:'Chelsea · Meatpacking · Morgan · High Line · Midtown',intro:'11:00 前退房並寄放行李；下午 15:00 免費參觀 Morgan 歷史圖書館；19:00–20:00 High Line 觀星；觀星後領行李，22:30 在 MSG 與朋友會合，一起前往 70 Pine。晚間領行李時間需先向住宿確認。',stops:[
@@ -51,6 +48,8 @@ s('19:00–約22:00','Harry Potter 單人場（抽票備案）','Lyric Theatre, 
 {id:'1102',date:'2026-11-02',weekday:'一',title:'抵達台灣',area:'SEA · TPE',intro:'抵達桃園第二航廈 T2。',stops:[s('20:30','DL0069 抵達桃園國際機場 T2','Taiwan Taoyuan International Airport Terminal 2',undefined,'達美航空 DL0069 Airbus A350-900；11/2（一）20:30 抵達，跨越國際換日線','confirmed')]}
 ];
 export const tickets:Ticket[]=[
+{id:'stranger1025',title:'Stranger Things: The First Shadow · Rush',date:'10/25',time:'13:00',status:'confirmed',note:'已購票 US$40；Marquis Theatre；Orchestra B 排 7 號。'},
+{id:'harry1025',title:'Harry Potter and the Cursed Child',date:'10/25',time:'19:00',status:'confirmed',note:'已購票 US$88；Lyric Theatre；Balcony D 排 14 號（視線受限）。'},
 {id:'cooper',title:'Cooper Hewitt',date:'10/25',time:'13:30',status:'planned',url:'https://www.cooperhewitt.org/visit/plan-your-visit/',note:'成人暫估 US$10；現場售票、展廳待查'},
 {id:'gugg',title:'Guggenheim · Pay What You Wish',date:'10/25',time:'16:00',status:'pending',url:'https://www.guggenheim.org/plan-your-visit',note:'週日優惠時段待確認，建議預訂'},
 {id:'moma',title:'MoMA',date:'10/28',time:'13:15',status:'pending',url:'https://www.moma.org/visit/',note:'成人暫估 US$30'},
