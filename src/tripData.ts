@@ -37,7 +37,6 @@ s('13:05–13:15','步行前往 Little Island','Little Island, Pier 55, New York
 s('13:15–13:45','Little Island｜速寫、看河景、休息','Little Island, Pier 55, New York, NY','步行','停留 30 分鐘；公園 10/27 開放時間為 6:00–23:00。'),
 s('13:45–14:15（預估）','搭車返回 Interfaith','Interfaith Retreats, 370 8th Avenue, New York, NY','Uber／計程車','預留車程緩衝，預計 14:15 左右回住宿。'),
 s('14:15–15:00','Interfaith｜休息、取行李','Interfaith Retreats, 370 8th Avenue, New York, NY',undefined,'取好行李後準備前往 Moynihan；最晚 15:30 離開。','verify'),
-s('15:00–15:30','Interfaith｜取行李緩衝','Interfaith Retreats, 370 8th Avenue, New York, NY',undefined,'15:30 前取好行李。','verify'),
 s('15:00–15:30','Interfaith｜取行李','Interfaith Retreats, 370 8th Avenue, New York, NY',undefined,'最晚 15:30 取好行李；先確認寄放與取件方式。','verify'),
 s('15:30–15:50','前往 Moynihan Train Hall','Moynihan Train Hall, 351 W 31st Street, New York, NY','步行；若背痠或行李重就搭車','預留 20 分鐘，15:50 前抵達。'),
 s('15:50–16:00','Moynihan Train Hall｜等朋友','Moynihan Train Hall, 351 W 31st Street, New York, NY',undefined,'在大廳等朋友，留意行李。','confirmed'),
