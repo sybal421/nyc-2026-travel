@@ -111,20 +111,15 @@ export const publishedTaskEdits: Record<string,{due:string;group:'行前準備'|
     "group": "行前準備",
     "title": "下載 MTA TrainTime：10/24 JFK Jamaica → Penn Station 的 LIRR 車票另購"
   },
-  "ferrybook": {
-    "due": "10/27",
-    "group": "旅途中",
-    "title": "10/29 NYC Ferry：確認 East River 線 DUMBO → South Williamsburg 的下午班次、碼頭位置、票價及購票方式"
-  },
   "insurance": {
     "due": "10/21",
     "group": "行前準備",
     "title": "確認旅遊保險"
   },
   "lugerbook": {
-    "due": "10/25",
+    "due": "10/29",
     "group": "旅途中",
-    "title": "預訂 10/29 Peter Luger 三人 16:00 座位，確認訂位與可接受的付款方式"
+    "title": "Peter Luger 15:45 訂位；帶現金或金融卡（不收信用卡）"
   },
   "pack-docs": {
     "due": "10/23",
