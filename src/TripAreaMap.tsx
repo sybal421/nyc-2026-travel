@@ -25,7 +25,7 @@ const extra:Record<string,string[]>={
   '1026':['Flatiron · SoHo','Whitehall Terminal · 免費 Staten Island Ferry 往返 St. George'],
   '1027':['Meatpacking · High Line · Little Island'],
   '1028':['Rector Park East · Battery Park City','MoMA · Midtown · Jazz Walk-in'],
-  '1029':['Brooklyn Bridge · DUMBO · Brooklyn Heights Promenade','NYC Ferry：DUMBO → South Williamsburg','Peter Luger（16:00 待訂位）· Broadway · Aladdin · Times Square'],
+  '1029':['Brooklyn Bridge · DUMBO · Brooklyn Heights Promenade','Peter Luger（15:45）· Williamsburg · Broadway · Aladdin · Times Square'],
   '1030':['Central Park · The Met · Upper East Side','不包含 Upper West Side；Morgan Library 為可選備案，不列入主要高亮區域'],
   '1031':['Little Ukraine · East Village · Nolita','Greenwich Village · 萬聖節遊行'],
 };
