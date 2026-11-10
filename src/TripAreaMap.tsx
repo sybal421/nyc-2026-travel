@@ -1,4 +1,4 @@
-import {days} from './tripData';
+import {days,type Day} from './tripData';
 
 /** Coordinates follow the unscaled 1024 × 1536 crop of the supplied watercolor illustration. */
 type Area = {id:string;label:string;shape:string;days:string[]};
@@ -28,13 +28,22 @@ const mapTagSources:[string,RegExp][]=[
   ['Central Park',/Central Park/],['The Met',/The Met/],
   ['Circle Line',/Circle Line/],['Little Ukraine',/Little Ukraine/],['East Village',/East Village/],['文具、插畫與古著小店',/文具、插畫與古著小店/],
 ];
+const dayMapTags=(day:Day)=>{
+  const seen=new Set<string>();
+  return day.stops.flatMap(stop=>stop.status==='backup'?[]:mapTagSources.filter(([,pattern])=>pattern.test(stop.title)).map(([label])=>label)).filter(label=>!seen.has(label)&&!!seen.add(label));
+};
 const mapDays=Object.fromEntries(days.map(day=>[day.id,{
   title:day.title,
-  tags:day.stops.flatMap(stop=>stop.status==='backup'?[]:mapTagSources.filter(([,pattern])=>pattern.test(stop.title)).map(([label])=>label))
+  tags:dayMapTags(day)
 }])) as Record<string,{title:string;tags:string[]}>;
 export const getMapDaySummary=(id:string)=>{
   const day=days.find(value=>value.id===id);
-  const matches=day?.stops.flatMap((stop,stopIndex)=>stop.status==='backup'?[]:mapTagSources.flatMap(([title,pattern],tagIndex)=>pattern.test(stop.title)&&stop.location?[{id:`${id}-map-${stopIndex}-${tagIndex}`,title,location:stop.location}]:[]))||[];
+  const seen=new Set<string>();
+  const matches=day?.stops.flatMap((stop,stopIndex)=>stop.status==='backup'?[]:mapTagSources.flatMap(([title,pattern],tagIndex)=>{
+    if(seen.has(title)||!pattern.test(stop.title)||!stop.location)return[];
+    seen.add(title);
+    return[{id:`${id}-map-${stopIndex}-${tagIndex}`,title,location:stop.location}];
+  }))||[];
   return {title:day?.title||'',area:areas.filter(area=>area.days.includes(id)).map(area=>area.label).join(' · '),stops:matches,locations:[...new Set(matches.map(stop=>stop.location))]};
 };
 const dateLabel=(id:string)=>days.find(d=>d.id===id)?.date.slice(5).replace('-','/')||'';
