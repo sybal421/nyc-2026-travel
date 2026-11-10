@@ -5,14 +5,15 @@ type Area = {id:string;label:string;shape:string;days:string[]};
 const areas:Area[]=[
   {id:'central-park',label:'Central Park',shape:'M340 170 L468 194 477 515 359 507Z',days:['1030']},
   {id:'upper-east-side',label:'Upper East Side · The Met',shape:'M462 205 L635 235 652 490 480 508Z',days:['1030']},
-  {id:'midtown',label:'Flatiron · Midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1026','1027','1028','1029']},
-  {id:'midtown-west-theater',label:'Theater District · Times Square',shape:'M218 475 L340 491 348 616 218 612Z',days:['1025','1027','1029','1031']},
-  {id:'chelsea',label:'Chelsea · High Line · Chelsea Market',shape:'M205 628 L455 687 453 866 220 825Z',days:['1027','1031']},
-  {id:'west-village',label:'West Village · Little Island',shape:'M205 834 L456 880 453 1031 225 1026Z',days:['1027']},
+  {id:'midtown',label:'Midtown',shape:'M218 465 L479 512 640 500 654 682 451 689 207 631Z',days:['1026','1028']},
+  {id:'midtown-west-theater',label:'Broadway · Midtown West',shape:'M218 475 L340 491 348 616 218 612Z',days:['1025','1027','1029']},
+  {id:'pier-83',label:'Pier 83 · Hudson River',shape:'M174 451 L219 464 219 538 177 527Z',days:['1031']},
+  {id:'chelsea',label:'Chelsea',shape:'M205 628 L455 687 453 866 220 825Z',days:['1027','1031']},
+  {id:'west-village',label:'Little Island · Hudson River',shape:'M205 834 L456 880 453 1031 225 1026Z',days:['1027']},
   {id:'soho',label:'SoHo · Orchard Street',shape:'M224 1026 L454 1037 453 1123 230 1134Z',days:['1026']},
   {id:'greenwich-village',label:'Greenwich Village',shape:'M225 1124 L454 1122 454 1214 285 1214Z',days:['1028']},
   {id:'east-village',label:'East Village · Lower East Side',shape:'M456 890 L739 883 765 1042 463 1038Z',days:['1026','1031']},
-  {id:'financial-district',label:'Financial District · 70 Pine',shape:'M316 1261 L560 1242 623 1405 526 1471 344 1412Z',days:['1027','1028']},
+  {id:'financial-district',label:'Financial District · 70 Pine',shape:'M316 1261 L560 1242 623 1405 526 1471 344 1412Z',days:['1027']},
   {id:'battery-park',label:'Battery Park City · Rector Park',shape:'M279 1214 L336 1212 346 1406 300 1378Z',days:['1028']},
   {id:'brooklyn-bridge',label:'Brooklyn Bridge',shape:'M624 1164 L850 1155 1024 1257 1024 1330 833 1279 642 1262Z',days:['1029']},
   {id:'dumbo',label:'DUMBO',shape:'M848 1253 L1024 1225 1024 1362 840 1358Z',days:['1029']},
@@ -29,14 +30,11 @@ const mapTagSources:[string,RegExp][]=[
 ];
 const mapDays=Object.fromEntries(days.map(day=>[day.id,{
   title:day.title,
-  tags:mapTagSources.filter(([,pattern])=>day.stops.some(stop=>stop.status!=='backup'&&pattern.test(stop.title))).map(([label])=>label)
+  tags:day.stops.flatMap(stop=>stop.status==='backup'?[]:mapTagSources.filter(([,pattern])=>pattern.test(stop.title)).map(([label])=>label))
 }])) as Record<string,{title:string;tags:string[]}>;
 export const getMapDaySummary=(id:string)=>{
   const day=days.find(value=>value.id===id);
-  const matches=mapTagSources.flatMap(([title,pattern],index)=>{
-    const stop=day?.stops.find(value=>value.status!=='backup'&&pattern.test(value.title)&&value.location);
-    return stop?.location?[{id:`${id}-map-${index}`,title,location:stop.location}]:[];
-  });
+  const matches=day?.stops.flatMap((stop,stopIndex)=>stop.status==='backup'?[]:mapTagSources.flatMap(([title,pattern],tagIndex)=>pattern.test(stop.title)&&stop.location?[{id:`${id}-map-${stopIndex}-${tagIndex}`,title,location:stop.location}]:[]))||[];
   return {title:day?.title||'',area:areas.filter(area=>area.days.includes(id)).map(area=>area.label).join(' · '),stops:matches,locations:[...new Set(matches.map(stop=>stop.location))]};
 };
 const dateLabel=(id:string)=>days.find(d=>d.id===id)?.date.slice(5).replace('-','/')||'';
