@@ -31,6 +31,14 @@ const mapDays=Object.fromEntries(days.map(day=>[day.id,{
   title:day.title,
   tags:mapTagSources.filter(([,pattern])=>day.stops.some(stop=>stop.status!=='backup'&&pattern.test(stop.title))).map(([label])=>label)
 }])) as Record<string,{title:string;tags:string[]}>;
+export const getMapDaySummary=(id:string)=>{
+  const day=days.find(value=>value.id===id);
+  const matches=mapTagSources.flatMap(([title,pattern],index)=>{
+    const stop=day?.stops.find(value=>value.status!=='backup'&&pattern.test(value.title)&&value.location);
+    return stop?.location?[{id:`${id}-map-${index}`,title,location:stop.location}]:[];
+  });
+  return {title:day?.title||'',area:areas.filter(area=>area.days.includes(id)).map(area=>area.label).join(' · '),stops:matches,locations:[...new Set(matches.map(stop=>stop.location))]};
+};
 const dateLabel=(id:string)=>days.find(d=>d.id===id)?.date.slice(5).replace('-','/')||'';
 export default function TripAreaMap({selectedDay,onSelectDay}:{selectedDay:string;onSelectDay:(id:string)=>void}){
   const all=selectedDay==='all';
